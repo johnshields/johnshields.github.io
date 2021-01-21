@@ -14,7 +14,7 @@
 .sidebar-text{
 	text-align: center;
 	color: #f1f1f1;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Andale Mono, monospace;
 }
 
 .email-link{
@@ -49,7 +49,13 @@
 /* Style page content */
 .main {
   margin-left: 160px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
+  padding: 20px 200px 200px 250px;
+}
+
+.desc {
+	color: black;
+	font-family: Andale Mono, monospace;
+
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
