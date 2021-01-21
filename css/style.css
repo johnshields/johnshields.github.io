@@ -77,12 +77,12 @@ header {
     font-family: Andale Mono, monospace;
 }
 
-.info-text{
+.info-text {
     margin-left: 25px;
     margin-right: 25px;
 }
 
-.headers-text{
+.headers-text {
     margin-left: 25px;
     margin-right: 25px;
 }
@@ -96,7 +96,7 @@ header {
 }
 
 .project-name {
-  text-align: center;
+    text-align: center;
 }
 
 div.gallery {
@@ -146,7 +146,7 @@ div.gallery img:hover {
 }
 
 @media screen and (max-width: 600px) {
-  div.info-text {
-    font-size: 30px;
-  }
+    div.info-text {
+        font-size: 30px;
+    }
 }
