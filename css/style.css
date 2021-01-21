@@ -45,9 +45,13 @@ header {
     top: 0; /* Stay at the top */
     left: 0;
     background-color: #22222e; /* Navy */
-    overflow: hidden; /* Hide scrollbars */
     padding-top: 20px;
 }
+
+.sidenav::-webkit-scrollbar {
+  display: none;
+}
+
 
 /* The navigation menu links */
 .sidenav a {
