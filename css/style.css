@@ -39,7 +39,7 @@ header {
 .sidenav {
     margin-right: 25px;
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 300px; /* Set the width of the sidebar */
+    width: 325px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -80,7 +80,14 @@ header {
 .info-text{
     margin-left: 25px;
     margin-right: 25px;
+    font-size:1vw;
 }
+
+.headers-text{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
 
 .projects {
     margin-left: 150px;
