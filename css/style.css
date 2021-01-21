@@ -143,12 +143,10 @@ div.gallery img:hover {
     .sidenav a {
         font-size: 18px;
     }
+}
 
-    .left, .main, .right {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+@media screen and (max-width: 600px) {
+  div.info-text {
+    font-size: 30px;
   }
-
-    .info-text a {
-        font-size:8vw;
-    }
 }
