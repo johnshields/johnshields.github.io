@@ -1,3 +1,10 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #ededed;
+}
+
+
 /* The sidebar menu */
 .avatar {
   border-radius: 50%;
@@ -27,7 +34,7 @@
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #22222e; /* Black */
+  background-color: #22222e; /* Navy */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
 }
@@ -60,31 +67,45 @@
 .projects {
   margin-left: auto;
   margin-right: auto;
-  padding: 50px 5px 5px 100px;
+  padding: 50px 5px 250px 60px;
 }
 
 div.gallery {
-  border: 3px solid #ccc;
+  margin: 1px 8px 1px 1px;
+  background-color: white;
+  border: 5px solid #22222e;
   float: left;
-  width: 250px;
+  height: 360px;
+  width: 260px;
   padding: 10px;
 }
 
 div.gallery:hover {
-  border: 5px solid #777;
+  border: 5px solid black;
 }
 
 div.gallery img {
+  border: 1px solid black;
   width: 100%;
   height: auto;
+}
+
+div.gallery img:hover {
+  opacity: 0.6;
 }
 
 div.desc {
   padding: 15px;
 }
 
-.end-galley{
-	padding-top: 800px;
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
