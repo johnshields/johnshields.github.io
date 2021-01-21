@@ -55,7 +55,36 @@
 .desc {
 	color: black;
 	font-family: Andale Mono, monospace;
+}
 
+.projects {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 5px 5px 125px;
+}
+
+div.gallery {
+  border: 3px solid #ccc;
+  float: left;
+  width: 500px;
+  padding: 10px;
+}
+
+div.gallery:hover {
+  border: 5px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+}
+
+.end-galley{
+	padding-top: 1100px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
