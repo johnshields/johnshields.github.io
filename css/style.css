@@ -80,7 +80,6 @@ header {
 .info-text{
     margin-left: 25px;
     margin-right: 25px;
-    font-size:1vw;
 }
 
 .headers-text{
@@ -150,6 +149,6 @@ div.gallery img:hover {
   }
 
     .info-text a {
-    font-size: 18px;
+        font-size:8vw;
     }
 }
