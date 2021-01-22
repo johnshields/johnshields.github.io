@@ -145,6 +145,6 @@ div.gallery img:hover {
     }
 
     body a {
-        position: absolute;
+        font-size: 18px;
     }
 }
