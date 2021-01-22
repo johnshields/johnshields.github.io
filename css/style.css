@@ -2,6 +2,7 @@ body {
     padding-bottom: 50px;
     margin-bottom: 100px;
     background-color: #ededed;
+    position: absolute;
 }
 
 header {
