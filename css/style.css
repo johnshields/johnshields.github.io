@@ -3,6 +3,7 @@ body {
     padding-right: 80px;
     margin-bottom: 100px;
     background-color: #ededed;
+    position: absolute;
 }
 
 header {
@@ -90,7 +91,7 @@ header {
 
 
 .projects {
-    margin-left: 125px;
+    margin-left: 50px;
     margin-right: auto;
     padding: 40px 50px 255px 1px;
     position: absolute;
