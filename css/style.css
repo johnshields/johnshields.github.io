@@ -3,7 +3,6 @@ body {
     padding-right: 80px;
     margin-bottom: 100px;
     background-color: #ededed;
-    position: absolute;
 }
 
 header {
@@ -91,7 +90,7 @@ header {
 
 
 .projects {
-    margin-left: 50px;
+    margin-left: 120px;
     margin-right: auto;
     padding: 40px 50px 255px 1px;
     position: absolute;
@@ -147,11 +146,6 @@ div.gallery img:hover {
 
     body {
         position: absolute;
+        font-size: 18px;
     }
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  body {
-    width: 100%;
-  }
 }
