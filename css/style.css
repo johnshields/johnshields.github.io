@@ -147,11 +147,6 @@ div.gallery img:hover {
     body {
         position: absolute;
     }
-
-    div.gallery {
-    height: 550px;
-    width: 600px;
-    }
 }
 
 @media screen and (max-width: 600px) {
