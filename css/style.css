@@ -1,5 +1,6 @@
 body {
     padding-bottom: 50px;
+    padding-right: 80px;
     margin-bottom: 100px;
     background-color: #ededed;
 }
@@ -89,7 +90,7 @@ header {
 
 
 .projects {
-    margin-left: 150px;
+    margin-left: 125px;
     margin-right: auto;
     padding: 40px 50px 255px 1px;
     position: absolute;
