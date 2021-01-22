@@ -144,7 +144,11 @@ div.gallery img:hover {
         font-size: 18px;
     }
 
-    .page-body {
-        position: absolute;
+    /* Smartphones (portrait) ----------- */
+    @media only screen
+    and (max-width: 320px) {
+        .page-body {
+            position: absolute;
+        }
     }
 }
