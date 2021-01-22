@@ -133,7 +133,6 @@ div.gallery img:hover {
     text-align: right;
 }
 
-
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidenav {
@@ -149,8 +148,8 @@ div.gallery img:hover {
     }
 }
 
-@media screen and (max-width: 600px) {
-    div.info-text {
-        font-size: 30px;
-    }
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  body {
+    width: 100%;
+  }
 }
