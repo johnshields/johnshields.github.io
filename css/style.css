@@ -10,6 +10,37 @@ header {
     text-align: center;
 }
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: black;
+    text-align: right;
+}
+
+/* Style page content */
+.main {
+    margin-left: 150px; /* Same as the width of the sidebar */
+    padding: 5px 5px 250px 250px;
+}
+
+.desc {
+    color: black;
+    font-family: Andale Mono, monospace;
+}
+
+.info-text {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.headers-text {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
 .index-page {
     padding-bottom: 300px;
     margin-bottom: 100px;
@@ -69,28 +100,7 @@ header {
     opacity: 0.6;
 }
 
-/* Style page content */
-.main {
-    margin-left: 150px; /* Same as the width of the sidebar */
-    padding: 5px 5px 250px 250px;
-}
-
-.desc {
-    color: black;
-    font-family: Andale Mono, monospace;
-}
-
-.info-text {
-    margin-left: 25px;
-    margin-right: 25px;
-}
-
-.headers-text {
-    margin-left: 25px;
-    margin-right: 25px;
-}
-
-
+/* Project Collection */
 .projects {
     margin-left: 60px;
     margin-right: 75px;
@@ -124,16 +134,6 @@ div.gallery img {
 
 div.gallery img:hover {
     opacity: 0.6;
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    color: black;
-    text-align: right;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
