@@ -3,6 +3,7 @@ body {
     padding-right: 80px;
     margin-bottom: 100px;
     background-color: #ededed;
+    position: absolute;
 }
 
 header {
@@ -22,9 +23,10 @@ header {
 }
 
 .menu-gallery {
-    margin: 5px;
+    margin: 10px;
     float: left;
     width: 60px;
+    height: 45px;
 }
 
 .sidebar-text {
@@ -34,13 +36,13 @@ header {
 }
 
 .email-link {
-    padding-top: 250px;
+    padding-top: 175px;
 }
 
 .sidenav {
     margin-right: 25px;
     height: 100%;
-    width: 325px; /* Set the width of the sidebar */
+    width: 350px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -90,7 +92,7 @@ header {
 
 
 .projects {
-    margin-left: 120px;
+    margin-left: 75px;
     margin-right: auto;
     padding: 40px 50px 255px 1px;
     position: absolute;
@@ -105,8 +107,8 @@ div.gallery {
     background-color: white;
     border: 5px solid #22222e;
     float: left;
-    height: 360px;
-    width: 240px;
+    height: 400px;
+    width: 380px;
     padding: 20px;
 }
 
@@ -142,13 +144,5 @@ div.gallery img:hover {
 
     .sidenav a {
         font-size: 18px;
-    }
-
-    /* Smartphones (portrait) ----------- */
-    @media only screen
-    and (max-width: 320px) {
-        .page-body {
-            position: absolute;
-        }
     }
 }
