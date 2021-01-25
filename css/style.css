@@ -16,8 +16,6 @@ header {
     bottom: 0;
     width: 100%;
     background-color: black;
-    color: black;
-    text-align: right;
 }
 
 /* Style page content */
@@ -54,10 +52,15 @@ header {
 }
 
 .menu-gallery {
-    margin: 10px;
+    margin-left: 6px;
+    position: center;
+    padding: 0;
     float: left;
-    width: 60px;
-    height: 45px;
+
+}
+
+.nav-logos:hover {
+    opacity: 0.6;
 }
 
 .sidebar-text {
@@ -67,13 +70,13 @@ header {
 }
 
 .email-link {
-    padding-top: 175px;
+    padding-top: 50px;
 }
 
 .sidenav {
     margin-right: 25px;
     height: 100%;
-    width: 350px; /* Set the width of the sidebar */
+    width: 335px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -94,10 +97,6 @@ header {
 
 .cv-btn-div {
     padding-bottom: 50px;
-}
-
-.nav-logos:hover {
-    opacity: 0.6;
 }
 
 /* Project Collection */
@@ -147,3 +146,4 @@ div.gallery img:hover {
         font-size: 18px;
     }
 }
+
