@@ -4,6 +4,8 @@ body {
     margin-bottom: 100px;
     background-color: #ededed;
     position: absolute;
+    color: black;
+    font-family: Andale Mono, monospace;
 }
 
 header {
@@ -20,13 +22,8 @@ header {
 
 /* Style page content */
 .main {
-    margin-left: 260px; /* Same as the width of the sidebar */
+    margin-left: 250px; /* Same as the width of the sidebar */
     padding: 5px 5px 250px 250px;
-}
-
-.desc {
-    color: black;
-    font-family: Andale Mono, monospace;
 }
 
 .info-text {
