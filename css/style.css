@@ -22,7 +22,7 @@ header {
 
 /* Style page content */
 .main {
-    margin-left: 150px; /* Same as the width of the sidebar */
+    margin-left: 140px; /* Same as the width of the sidebar */
     padding: 5px 5px 250px 250px;
 }
 
