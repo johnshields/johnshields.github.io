@@ -96,6 +96,10 @@ header {
     padding-bottom: 50px;
 }
 
+.author {
+    color: #818181;
+}
+
 /* Project Collection */
 .projects {
     margin-left: 60px;
