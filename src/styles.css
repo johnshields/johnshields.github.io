@@ -209,6 +209,22 @@ a {
         align-self: flex-end;
     }
 
+    .project-image {
+        width: 500px;
+        height: 325px;
+    }
+
+    .project-card {
+        width: 800px;
+        height: 650px;
+        font-size: 30px;
+    }
+
+    .subtext {
+        font-size: 25px;
+        font-weight: 300;
+    }
+
     ul {
         display: none;
         background-color: #2b2c38;
