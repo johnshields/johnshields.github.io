@@ -1,188 +1,176 @@
-<!DOCTYPE HTML>
-<!--
-John Shields - Portfolio
--->
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <title>John Shields - Portfolio</title>
-    <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
-    <meta content="" name="description"/>
-    <meta content="" name="keywords"/>
-    <meta charset="utf-8">
-    <link href="images/LOGO.ico" rel="icon">
-    <link href="css/style.css" rel="stylesheet"/>
+    <link href="src/images/logo.ico" rel="icon">
+    <link rel="stylesheet" href="src/styles.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+          rel="stylesheet">
+    <script src="https://kit.fontawesome.com/761e4c8e5c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>John Shields - Portfolio</title>
+    <meta charset="UTF-8"/>
 </head>
-<body class="page-body" id="top">
-<div class="index-page">
-    <!-- Side Bar -->
-    <div class="sidenav" style="text-align: center">
-        <p><a href="https://johnshields.github.io/">
-            <img alt="Avatar" class="avatar" src="images/photo_me.jpg">
-        </a>
-        </p>
-        <h3 class="sidebar-text">Greetings, I'm John!
-            <br><br>
-            Welcome to my Portfolio!</h3>
-        <hr style="height:2px;border-width:0;color:gray;background-color:black">
-        <h4 class="sidebar-text">Find me through out the Web!</h4>
-        <div class="menu-gallery">
-            <a href="https://github.com/johnshields" class="nav-logos" target="_blank" rel="noopener noreferrer">
-                <i class="fa fa-github"></i></a>
+<body>
+<section class="hero">
+    <nav>
+        <img class="logo" src="src/images/logo.png" alt="js-logo"/>
+        <ul id="nav-list">
+            <li><a href="#about-me">About me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact-me">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+    <div class="hero-area">
+        <div class="hero-text">
+            <h1>John Shields</h1>
+            <p>Welcome to my Portfolio!</p>
+            <div class="button"><a href="#about-me">About me</a></div>
         </div>
-        <div class="menu-gallery">
-            <a href="https://www.linkedin.com/in/john-shields-551b86165/" class="nav-logos" target="_blank"
-               rel="noopener noreferrer">
-                <i class="fa fa-linkedin-square"></i></a>
-        </div>
-        <div class="menu-gallery">
-            <a href="https://www.youtube.com/channel/UCy9plh2hXdfvv3vHMB2c6ag/videos" class="nav-logos" target="_blank"
-               rel="noopener noreferrer">
-                <i class="fa fa-youtube-square"></i></a>
-        </div>
-        <div class="menu-gallery">
-            <a href="https://soundcloud.com/john-shields-music" class="nav-logos" target="_blank"
-               rel="noopener noreferrer">
-                <i class="fa fa-soundcloud"></i></a>
-        </div>
-        <div class="menu-gallery">
-            <a href="https://www.instagram.com/johnshields__/?hl=en" class="nav-logos" target="_blank"
-               rel="noopener noreferrer">
-                <i class="fa fa-instagram"></i></a>
-        </div>
-        <div class="menu-gallery">
-            <a style="color:black;" href="https://www.instagram.com/scenesofnoir/?hl=en" class="nav-logos"
-               target="_blank" rel="noopener noreferrer">
-                <i class="fa fa-instagram"></i></a>
-        </div>
-        <div class="email-link">
-            <hr style="height:2px;border-width:0;color:gray;background-color:black">
-            <h4 class="sidebar-text">Contact me!</h4>
-            <address>
-                <a href="mailto:johndshields14@gmail.com" class="nav-logos" target="_blank" rel="noopener noreferrer">
-                    <i class="fa fa-envelope"></i></a>
-            </address>
-            <hr style="height:2px;border-width:0;color:gray;background-color:black">
-        </div>
-        <div class="cv-btn-div">
-            <h4 class="sidebar-text">View my CV!</h4>
-            <a href="https://drive.google.com/file/d/1db33yvbyuN1pLgYG5DPiXTHHuBmVICy2/view?usp=sharing"
-               class="nav-logos" target="_blank" rel="noopener noreferrer">
-                <i class="fa fa-file-pdf-o"></i></a>
-            <hr style="height:2px;border-width:0;color:gray;background-color:black">
-        </div>
-        <p class="author">Designed & Built by John Shields</p>
-    </div>
+        <div class="socials">
+            <div><a href="https://github.com/johnshields" class="social" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a></div>
+            <div><a href="https://www.linkedin.com/in/john-shields-551b86165/" class="social" target="_blank"
+                    rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24">
+                    <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                </svg>
+            </a></div>
+            <div><a href="https://soundcloud.com/john-shields-music" class="social" target="_blank"
+                    rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24">
+                    <path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm3 0h1v-9.224c-.229.265-.443.548-.621.857l-.379-.184v8.551zm-2 0h1v-8.848c-.508-.079-.623-.05-1-.01v8.858zm-4 0h1v-7.02c-.312.458-.555.971-.692 1.535l-.308-.182v5.667zm-3-5.25c-.606.547-1 1.354-1 2.268 0 .914.394 1.721 1 2.268v-4.536zm18.879-.671c-.204-2.837-2.404-5.079-5.117-5.079-1.022 0-1.964.328-2.762.877v10.123h9.089c1.607 0 2.911-1.393 2.911-3.106 0-2.233-2.168-3.772-4.121-2.815zm-16.879-.027c-.302-.024-.526-.03-1 .122v5.689c.446.143.636.138 1 .138v-5.949z"/>
+                </svg>
+            </a></div>
+            <div><a href="https://www.instagram.com/johnshields__/?hl=en" class="social" target="_blank"
+                    rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="50" height="50" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a></div>
 
-    <!-- Page content -->
-    <div class="main">
-        <div>
-            <header>
-                <h1>
-                    John Shields
-                    <br>---<br>
-                    Portfolio
-                </h1>
-                <hr style="height:2px;border-width:0;color:gray;background-color:black">
-            </header>
-            <h2 class="headers-text"><u>About Me:</u>&#9889;</h2>
-            <p class="info-text">Final Year Student of Software Development at Galway-Mayo Institute of Technology who
-                enjoys<br>
-                App Development, Game Development, Video Editing, Music Production, Film, and Surfing!<br><br>
-                Check out my Portfolio to learn more about me and what I do!</p>
-            <hr style="height:2px;border-width:0;color:gray;background-color:black">
-        </div>
-        <!-- Project Collection -->
-        <div class="desc">
-            <br>
-            <h1 class="headers-text">Projects:⚙️</h1>
-            <hr style="height:2px;border-width:0;color:gray;background-color:black">
-            <p class="info-text">A collection of my active and non-active projects for college, personal interest, and
-                promotional reasons.<br>
-                <br>Click on the <u>images</u> to learn more and see the projects for yourself!</p>
-            <div class="projects">
-                <div class="gallery">
-                    <a href="https://github.com/johnshields/Metrics-App" target="_blank" rel="noopener noreferrer">
-                        <img alt="Metrics App" height="339" src="images/metrics.jpg" width="564">
-                    </a>
-                    <div class="desc"><br>
-                        <h3 class="project-name">Metrics Application</h3>Java App that processes JAR Files to read
-                        embedded the Classes and
-                        print their Class Names, Package Names, and the Lines of Code on a GUI.
-                    </div>
-                </div>
-                <div class="gallery">
-                    <a href="https://github.com/johnshields/GoodVibrations-MR-Game" target="_blank"
-                       rel="noopener noreferrer">
-                        <img alt="Good Vibrations" height="578" src="images/good_vibes.png" width="1032">
-                    </a>
-                    <div class="desc"><h3 class="project-name">Good Vibrations</h3>
-                        Mixed Reality Game (being developed using Unity) that allows the user to control the game by using voice
-                        commands,
-                        keyboard, and mouse.
-                    </div>
-                </div>
-                <div class="gallery">
-                    <a href="https://github.com/johnshields/Kafka-Distributed-Banking-System" target="_blank"
-                       rel="noopener noreferrer">
-                        <img alt="Distributed Banking System" height="540" src="images/architecture.png" width="960">
-                    </a>
-                    <div class="desc"><h3 class="project-name">Distributed Banking System</h3>
-                        A Kafka Distributed Banking System that processes card transactions and identifies suspicious
-                        transactions
-                        so that customers can be notified.
-                    </div>
-                </div>
-                <div class="gallery">
-                    <a href="https://github.com/johnshields/Python-RegEx-Parser" target="_blank"
-                       rel="noopener noreferrer">
-                        <img alt="Python Regex Parser" height="364" src="images/regex.png" width="520">
-                    </a>
-                    <div class="desc"><h3 class="project-name">Regular Expression Parser</h3>
-                        A program in Python that can build a Non-Deterministic Finite Automaton from a Regular
-                        Expression.
-                    </div>
-                </div>
-                <div class="gallery">
-                    <a href="https://github.com/johnshields/EMT_PROJECT" target="_blank" rel="noopener noreferrer">
-                        <img alt="Wind Turbine Power Predictor" height="1800" src="images/model.jpg" width="2880">
-                    </a>
-                    <div class="desc"><h3 class="project-name">Wind Turbine Power Predictor</h3>
-                        A Flask Web Service that uses Machine Learning to make predictions based of a Power Production
-                        of a Wind Turbine Data Set.
-                    </div>
-                </div>
-                <div class="gallery">
-                    <a href="https://github.com/johnshields/ABSO-Game" target="_blank" rel="noopener noreferrer">
-                        <img alt="A Bayou-Space Odyssey" height="806" src="images/abso.jpg" width="1202">
-                    </a>
-                    <div class="desc"><h3 class="project-name">A Bayou-Space Odyssey</h3>
-                        Desktop Game that is a 3D runner and was developed using Unity.
-                    </div>
-                </div>
-                <div class="gallery">
-                    <a href="https://github.com/johnshields/TSB-GAME" target="_blank" rel="noopener noreferrer">
-                        <img alt="The Split Bullet" height="334" src="images/tsb.jpg" width="520">
-                    </a>
-                    <div class="desc"><h3 class="project-name">The Split Bullet</h3>
-                        Side project, which is a 3D story-based game and is being developed using Unity.
-                    </div>
-                </div>
+            <div><a href="https://www.instagram.com/scenesofnoir/?hl=en" class="social"
+                    target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a></div>
 
-                <div class="gallery">
-                    <a href="https://www.instagram.com/p/CKKKt5spTBu/" target="_blank" rel="noopener noreferrer">
-                        <img alt="Essential Fashion" height="328" src="images/ef.jpg" width="457">
-                    </a>
-                    <div class="desc"><h3 class="project-name">No.8 Boutique<br>
-                        Essential Fashion</h3>
-                        Promotional music & video edit for
-                        <a href="https://no8.ie/" target="_blank" rel="noopener noreferrer">No.8 Boutique</a>.
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-</div>
+</section>
+<section class="sub-section" id="about-me">
+    <div class="information">
+        <h2><u>About Me</u> &#9889;</h2>
+        <p>Final Year Student of Software Development at Galway-Mayo Institute of Technology who enjoys
+            App Development, Game Development, Video Editing, Music Production, Film, and Surfing!</p>
+    </div>
+    <div class="headshot-container">
+        <img class="headshot" src="src/images/photo_me.jpg" alt="John Shields"/>
+    </div>
+</section>
+<section class="sub-section-alternative" id="projects">
+    <h2><u>Projects</u> &#128736;</h2>
+    <p style="margin-bottom: 20px">A collection of my active and non-active projects for college, personal interest, and
+        promotional reasons.<br>
+        <br>Click on the <u>images</u> to learn more and see the projects for yourself!
+    </p>
+    <!-- first project row-->
+    <div class="project-container">
+        <div class="project-card">
+            <a class="project-link" href="https://github.com/johnshields/Metrics-App" target="_blank" rel="noopener noreferrer">
+            <img class="project-image" src="src/images/metrics.jpg" alt="Metrics App"/>
+            </a>
+            <h3>Metrics App</h3>
+            <p class="subtext">JavaFX App that processes JAR Files to read embedded the Classes and print their
+                Class Names, Package Names, and the Lines of Code on a GUI.</p>
+            <hr/>
+        </div>
+
+        <div class="project-card">
+            <a class="project-link" href="https://github.com/johnshields/GoodVibrations-MR-Game" target="_blank" rel="noopener noreferrer">
+                <img class="project-image" src="src/images/good_vibes.png" alt="Good Vibrations"/>
+            </a>
+            <h3>Good Vibrations</h3>
+            <p class="subtext">Mixed Reality Game (being developed using Unity) that allows the user to control
+                the game by using voice commands, keyboard, and mouse.</p>
+            <hr/>
+        </div>
+
+        <div class="project-card">
+            <a class="project-link" href="https://github.com/johnshields/Kafka-Distributed-Banking-System" target="_blank" rel="noopener noreferrer">
+                <img class="project-image" src="src/images/architecture.png" alt="Kafka Banking System"/>
+            </a>
+            <h3>Distributed Banking System</h3>
+            <p class="subtext">A Kafka Distributed Banking System that processes card transactions and identifies
+                suspicious
+                transactions so that customers can be notified.</p>
+            <hr/>
+        </div>
+
+        <div class="project-card">
+            <a href="https://github.com/johnshields/ABSO-Game" target="_blank" rel="noopener noreferrer">
+                <img class="project-image" src="src/images/abso.jpg" alt="A Bayou-Space Odyssey"/>
+            </a>
+            <h3>A Bayou-Space Odyssey</h3>
+            <p class="subtext">A 3D runner game designed by another student and developed by me using Unity.
+                This game has three different levels and a two-person multiplayer mode.</p>
+            <hr/>
+        </div>
+    </div>
+    <!-- second project row -->
+    <div class="project-container">
+        <div class="project-card">
+            <a class="project-link" href="https://github.com/johnshields/ML-Web-Service" target="_blank" rel="noopener noreferrer">
+                <img class="project-image" src="src/images/ml-web-service.png" alt="ML Web Service"/>
+            </a>
+            <h3>Machine Learning Web Service</h3>
+            <p class="subtext">A Flask Web Service that uses Machine Learning to make predictions based
+                of a Power Production of a Wind Turbine Data Set.</p>
+            <hr/>
+        </div>
+
+        <div class="project-card">
+            <a class="project-link" href="https://github.com/johnshields/TSB-GAME" target="_blank" rel="noopener noreferrer">
+                <img class="project-image" src="src/images/tsb.jpg" alt="A Split Bullet"/>
+            </a>
+            <h3>The Split Bullet</h3>
+            <p class="subtext">A side project being developed with Unity, which is a 3D, noir-themed, and story-based game.</p>
+            <hr/>
+        </div>
+
+        <div class="project-card">
+            <a class="project-link" href="https://github.com/johnshields/Python-RegEx-Parser" target="_blank" rel="noopener noreferrer">
+                <img class="project-image" src="src/images/regex.png" alt="RegEx Parser"/>
+            </a>
+            <h3>Regular Expression Parser</h3>
+            <p class="subtext">A program in Python that can build a Non-Deterministic Finite Automaton from a Regular Expression.</p>
+            <hr/>
+        </div>
+
+        <div class="project-card">
+            <a href="https://www.instagram.com/p/CKKKt5spTBu/" target="_blank" rel="noopener noreferrer">
+                <img class="project-image" src="src/images/ef.jpg" alt="Essential Fashion"/>
+            </a>
+            <h3>No.8 Boutique<br>Essential Fashion</h3>
+            <p class="subtext"> Promotional music & video edit for
+                <a href="https://no8.ie/" target="_blank" rel="noopener noreferrer" class="no8"><u>No.8 Boutique</u></a>.</p>
+            <hr/>
+        </div>
+    </div>
+</section>
+<footer id="contact-me">
+    <a href="mailto:johndshields14@gmail.com" target="_blank" rel="noopener noreferrer" class="email">
+        <h2><u>Contact Me</u>&nbsp;&nbsp;<i class="fa fa-envelope"></i></h2>
+    </a>
+</footer>
+<script src="src/app.js"></script>
 </body>
-<div class="footer"><p></p></div>
 </html>
