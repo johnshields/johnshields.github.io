@@ -188,7 +188,7 @@ a {
     outline: 0;
 }
 
-.no8 {
+.hyper-link {
     color: #2828a9;
     font-weight: bold;
 }
@@ -216,7 +216,7 @@ a {
 
     .project-card {
         width: 800px;
-        height: 650px;
+        height: 675px;
         font-size: 30px;
     }
 
