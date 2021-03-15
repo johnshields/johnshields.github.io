@@ -140,6 +140,30 @@ svg:hover{
     align-items: center;
 }
 
+.work-places {
+    color: black;
+}
+
+.work-places:hover {
+    opacity: 0.8;
+}
+
+.work {
+    margin-right:30%;
+}
+
+.work-desc {
+    display:inline-flex;
+}
+
+.right-table {
+    padding-left: 20%;
+}
+
+.role {
+    font-weight: bold;
+}
+
 .skills {
     margin-right: 52%;
 }
