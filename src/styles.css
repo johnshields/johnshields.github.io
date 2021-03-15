@@ -139,6 +139,16 @@ svg:hover{
     align-items: center;
 }
 
+.skills {
+    margin-right: 55%;
+}
+
+.tech {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px
+}
+
 .project-card {
     background-color: white;
     width: 500px;
@@ -156,6 +166,14 @@ svg:hover{
     .project-container {
         display: flex;
         flex-wrap: wrap;
+    }
+
+    .skills {
+        margin-right: 15%;
+    }
+
+    .tech {
+        margin-left: 50px
     }
 }
 
@@ -189,7 +207,7 @@ a {
 }
 
 .hyper-link {
-    color: #2828a9;
+    color: #4a4aa4;
     font-weight: bold;
 }
 
