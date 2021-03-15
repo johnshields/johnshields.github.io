@@ -32,6 +32,7 @@ ul {
     width: 500px;
     justify-content: space-around;
     font-size: 30px;
+    float: right;
 }
 
 li {
@@ -140,7 +141,7 @@ svg:hover{
 }
 
 .skills {
-    margin-right: 55%;
+    margin-right: 50%;
 }
 
 .tech {
