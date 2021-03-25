@@ -142,32 +142,8 @@ svg:hover{
     padding: 80px;
 }
 
-.work-places {
-    color: black;
-}
-
-.work-places:hover {
-    opacity: 0.8;
-}
-
-.work {
-    margin-right:30%;
-}
-
-.work-desc {
-    display:inline-flex;
-}
-
-.right-table {
-    padding-left: 10%;
-}
-
-.role {
-    font-weight: bold;
-}
-
 .skills {
-    margin-right: 52%;
+    margin-right: 56%;
 }
 
 .tech {
