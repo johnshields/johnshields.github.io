@@ -122,7 +122,9 @@ p {
 }
 
 .social {
-    margin: 20px;
+    margin: 15px;
+    height: 80px;
+    width: 80px;
 }
 
 svg:hover{
