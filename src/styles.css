@@ -112,6 +112,27 @@ p {
     color: #808080;
 }
 
+.lt_button {
+    width: 200px;
+    height: 55px;
+    border-radius: 30px;
+    background-color: #5fa079;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    padding-top: 5px;
+    margin-top: 20px;
+}
+
+.lt_button:hover {
+    background-color: #3a8369;
+}
+
+.lt_button:active {
+    background-color: #A9A9A9;
+    color: #808080;
+}
+
 .socials {
     padding-bottom: 200px;
 }
