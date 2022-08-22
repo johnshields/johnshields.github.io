@@ -188,6 +188,15 @@ svg:hover{
     justify-content: space-around;
 }
 
+.active {
+    display: inline;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 15px;
+    background-color: #47a673;
+}
+
 @media only screen and (max-width: 1000px) {
 
     .headshot-container {
