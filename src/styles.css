@@ -91,7 +91,7 @@ p {
     margin-bottom: 250px
 }
 
-.button {
+.ab_button {
     width: 200px;
     height: 55px;
     border-radius: 30px;
@@ -103,11 +103,32 @@ p {
     margin-top: 20px;
 }
 
-.button:hover {
+.ab_button:hover {
     background-color: #3a6c83;
 }
 
-.button:active {
+.ab_button:active {
+    background-color: #A9A9A9;
+    color: #808080;
+}
+
+.p_button {
+    width: 200px;
+    height: 55px;
+    border-radius: 30px;
+    background-color: #7393B3;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    padding-top: 5px;
+    margin-top: 20px;
+}
+
+.p_button:hover {
+    background-color: #4682B4;
+}
+
+.p_button:active {
     background-color: #A9A9A9;
     color: #808080;
 }
@@ -125,7 +146,7 @@ p {
 }
 
 .lt_button:hover {
-    background-color: #3a8369;
+    background-color: #436e54;
 }
 
 .lt_button:active {
