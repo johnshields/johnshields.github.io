@@ -8,14 +8,14 @@ section {
 }
 
 .hero {
-    background-color: #22222e;
+    background-color: #000000;
     height: 100vh;
     color: white;
     font-size: 40px;
 }
 
 footer {
-    background-color: #22222e;
+    background-color: #000000;
     color: white;
     text-align: center;
     padding: 80px;
@@ -79,7 +79,7 @@ p {
 }
 
 .headshot {
-    width: 300px;
+    width: 450px;
     border-radius: 150px;
     margin-left: 80px;
     margin-right: 80px;
@@ -96,6 +96,8 @@ p {
     height: 55px;
     border-radius: 30px;
     background-color: cadetblue;
+    color: black;
+    text-decoration: none;
     text-align: center;
     font-size: 30px;
     font-weight: 300;
@@ -116,7 +118,7 @@ p {
     width: 200px;
     height: 55px;
     border-radius: 30px;
-    background-color: #7393B3;
+    background-color: #5fa079;
     text-align: center;
     font-size: 30px;
     font-weight: 300;
@@ -125,7 +127,7 @@ p {
 }
 
 .p_button:hover {
-    background-color: #4682B4;
+    background-color: #436e54;
 }
 
 .p_button:active {
@@ -137,7 +139,7 @@ p {
     width: 200px;
     height: 55px;
     border-radius: 30px;
-    background-color: #5fa079;
+    background-color: #4682B4;
     text-align: center;
     font-size: 30px;
     font-weight: 300;
@@ -146,7 +148,7 @@ p {
 }
 
 .lt_button:hover {
-    background-color: #436e54;
+    background-color: #275477;
 }
 
 .lt_button:active {
@@ -269,6 +271,11 @@ hr {
 a {
     text-decoration: none;
     color: white;
+}
+
+div[class$="_button"] a {
+    color: black;
+    text-decoration: none;
 }
 
 .hamburger {
