@@ -296,49 +296,66 @@ div[class$="_button"] a {
 }
 
 @media only screen and (max-width: 1000px) {
-    .hamburger {
-        display: block;
-        border: 0;
-        background-color: transparent;
-        color: white;
-        font-size: 30px;
-        margin: 20px;
-        align-self: flex-end;
+    .hero-area {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: 50px;
     }
 
-    .project-image {
-        width: 500px;
-        height: 325px;
+    .hero-text {
+        margin: 0 20px 50px 20px;
+    }
+
+    .headshot-container {
+        margin: 0;
+    }
+
+    .headshot {
+        width: 250px;
+        border-radius: 50%;
+    }
+
+    .skills {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .tech {
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+    }
+
+    .project-container {
+        flex-direction: column;
+        align-items: center;
     }
 
     .project-card {
-        width: 800px;
-        height: 800px;
-        font-size: 30px;
+        width: 90%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    .project-image {
+        width: 90%;
+        height: auto;
     }
 
     .subtext {
-        font-size: 25px;
-        font-weight: 300;
+        font-size: 18px;
     }
 
-    ul {
-        display: none;
-        background-color: #2b2c38;
-        margin: 0px;
+    h1 {
+        font-size: 60px;
     }
 
-    ul.show {
-        display: block;
+    h2 {
+        font-size: 36px;
     }
 
-    nav {
-        display: flex;
-        flex-direction: column-reverse;
-        background-color: #2b2c38;
-    }
-
-    .logo {
-        display: none;
+    p {
+        font-size: 20px;
     }
 }
