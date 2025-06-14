@@ -1,6 +1,16 @@
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
+}
+
+img, table {
+    max-width: 100%;
+    height: auto;
 }
 
 section {
@@ -296,49 +306,29 @@ div[class$="_button"] a {
 }
 
 @media only screen and (max-width: 1000px) {
-    .hamburger {
-        display: block;
-        border: 0;
-        background-color: transparent;
-        color: white;
-        font-size: 30px;
-        margin: 20px;
-        align-self: flex-end;
+    .hero-area {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+        text-align: center;
     }
 
-    .project-image {
-        width: 500px;
-        height: 325px;
+    .hero-text {
+        margin: 0;
     }
 
-    .project-card {
-        width: 800px;
-        height: 800px;
-        font-size: 30px;
+    .headshot-container {
+        margin: 20px 0;
     }
 
-    .subtext {
-        font-size: 25px;
-        font-weight: 300;
+    .headshot {
+        width: 200px;
+        height: auto;
+        border-radius: 50%;
+        margin: 0;
     }
 
-    ul {
-        display: none;
-        background-color: #2b2c38;
-        margin: 0px;
-    }
-
-    ul.show {
-        display: block;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column-reverse;
-        background-color: #2b2c38;
-    }
-
-    .logo {
-        display: none;
+    .ab_button, .p_button, .lt_button {
+        margin: 10px auto;
     }
 }
