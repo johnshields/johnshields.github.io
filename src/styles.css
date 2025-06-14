@@ -1,27 +1,19 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html, body {
+    font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     max-width: 100%;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-}
-
-img, table {
-    max-width: 100%;
-    height: auto;
-}
-
+/* ===== STRUCTURE ===== */
 section {
     background-color: #ededed;
-}
-
-.hero {
-    background-color: #000000;
-    height: 100vh;
-    color: white;
-    font-size: 40px;
 }
 
 footer {
@@ -45,14 +37,16 @@ ul {
     float: right;
 }
 
-li {
+li a {
     text-decoration: none;
+    color: inherit;
 }
 
-li:hover{
+li a:hover {
     opacity: 0.5;
 }
 
+/* ===== TYPOGRAPHY ===== */
 h1 {
     font-size: 90px;
     margin: 0;
@@ -76,6 +70,22 @@ p {
     padding-left: 10px;
 }
 
+.tech-tags {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.8rem;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    background-color: #000000;
+    height: 100vh;
+    color: white;
+    font-size: 40px;
+}
+
 .hero-area {
     display: flex;
     height: 100%;
@@ -88,103 +98,68 @@ p {
     margin-bottom: 200px;
 }
 
-.headshot {
-    width: 450px;
-    border-radius: 150px;
-    margin-left: 80px;
-    margin-right: 80px;
-}
-
 .headshot-container {
     display: flex;
     align-items: center;
-    margin-bottom: 250px
+    margin-bottom: 250px;
 }
 
-.ab_button {
+.headshot {
+    width: 450px;
+    border-radius: 150px;
+    margin: 0 80px;
+}
+
+/* ===== BUTTONS ===== */
+.ab_button,
+.p_button,
+.lt_button {
     width: 200px;
     height: 55px;
     border-radius: 30px;
-    background-color: cadetblue;
-    color: black;
-    text-decoration: none;
     text-align: center;
     font-size: 30px;
     font-weight: 300;
     padding-top: 5px;
     margin-top: 20px;
+    color: black;
+    text-decoration: none;
 }
 
+.ab_button {
+    background-color: cadetblue;
+}
 .ab_button:hover {
     background-color: #3a6c83;
 }
-
 .ab_button:active {
     background-color: #A9A9A9;
     color: #808080;
 }
 
 .p_button {
-    width: 200px;
-    height: 55px;
-    border-radius: 30px;
     background-color: #5fa079;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 300;
-    padding-top: 5px;
-    margin-top: 20px;
 }
-
 .p_button:hover {
     background-color: #436e54;
 }
-
 .p_button:active {
     background-color: #A9A9A9;
     color: #808080;
 }
 
 .lt_button {
-    width: 200px;
-    height: 55px;
-    border-radius: 30px;
     background-color: #4682B4;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 300;
-    padding-top: 5px;
-    margin-top: 20px;
 }
-
 .lt_button:hover {
     background-color: #275477;
 }
-
 .lt_button:active {
     background-color: #A9A9A9;
     color: #808080;
 }
 
-.socials {
-    padding-bottom: 200px;
-}
-
-.logo {
-    height: 80px;
-    margin: 30px;
-}
-
-.social {
-    margin: 10px;
-    height: 80px;
-    width: 80px;
-}
-
-svg:hover{
-    opacity: 0.5;
-}
-
+/* ===== CONTENT LAYOUT ===== */
 .sub-section {
     display: flex;
     justify-content: space-around;
@@ -199,26 +174,93 @@ svg:hover{
 }
 
 .skills {
-    margin-right: 56%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .tech {
     width: 80px;
     height: 80px;
-    margin-bottom:30px
-}
-
-.project-card {
-    background-color: white;
-    width: 500px;
-    height: 500px;
-    box-shadow: 5px 5px 20px rgb(197, 195, 195);
-    margin: 10px;
+    margin-bottom: 30px;
+    object-fit: contain;
 }
 
 .project-container {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.project-card {
+    background-color: white;
+    width: 375px;
+    height: 500px;
+    box-shadow: 5px 5px 20px rgba(197, 195, 195, 0.7);
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.project-image {
+    margin-top: 25px;
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    color: #333;
+    flex-grow: 1;
+}
+
+.tech-tags {
+    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tech-tags h3 {
+    display: block;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.9rem;
+    margin: 5px auto;
+    width: fit-content;
+    background-color: white;
+}
+
+/* ===== MISC ===== */
+.logo {
+    height: 80px;
+    margin: 30px;
+}
+
+.socials {
+    padding-bottom: 200px;
+}
+
+.social {
+    margin: 10px;
+    height: 80px;
+    width: 80px;
+}
+
+svg:hover {
+    opacity: 0.5;
 }
 
 .active {
@@ -228,54 +270,6 @@ svg:hover{
     padding: 3px;
     font-size: 15px;
     background-color: #47a673;
-}
-
-@media only screen and (max-width: 1000px) {
-
-    .headshot-container {
-        margin-bottom: 225px
-    }
-
-    .project-container {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .work {
-        margin-right: 0;
-    }
-
-    .skills {
-        margin-right: 15%;
-    }
-
-    .tech {
-        margin-left: 50px
-    }
-}
-
-.project-image:hover {
-    opacity: 0.8;
-}
-
-.project-image {
-    margin-top: 25px;
-    width: 300px;
-    height: 200px;
-    border-radius: 5px;
-}
-
-.tech-tags {
-    display: inline;
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 5px
-}
-
-hr {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
 }
 
 a {
@@ -291,8 +285,7 @@ div[class$="_button"] a {
 .hamburger {
     display: none;
 }
-
-.hamburger:focus{
+.hamburger:focus {
     outline: 0;
 }
 
@@ -305,30 +298,103 @@ div[class$="_button"] a {
     color: #3a6c83;
 }
 
+/* ===== MEDIA QUERIES ===== */
 @media only screen and (max-width: 1000px) {
-    .hero-area {
-        flex-direction: column;
-        align-items: center;
-        padding: 0 20px;
-        text-align: center;
+    h1 {
+        font-size: 2.2rem;
     }
 
-    .hero-text {
-        margin: 0;
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .subtext {
+        font-size: 0.95rem;
+    }
+
+    .tech-tags {
+        font-size: 0.75rem;
     }
 
     .headshot-container {
-        margin: 20px 0;
+        margin-bottom: 225px;
+        justify-content: center;
     }
 
     .headshot {
-        width: 200px;
+        width: 300px;
         height: auto;
         border-radius: 50%;
         margin: 0;
     }
 
-    .ab_button, .p_button, .lt_button {
-        margin: 10px auto;
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills {
+        margin: 0 auto;
+    }
+
+    .tech {
+        margin-left: 0;
+        width: 60px;
+        height: 60px;
+    }
+
+    .project-card {
+        width: 90%;
+        height: auto;
+    }
+
+    .project-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .ab_button,
+    .p_button,
+    .lt_button {
+        font-size: 1rem;
+        padding-top: 6px;
+        height: auto;
+    }
+
+    .button {
+        font-size: 1rem;
+    }
+
+    ul {
+        display: none;
+    }
+
+    ul.show {
+        display: block;
+        background-color: #2b2c38;
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column-reverse;
+        background-color: #2b2c38;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        border: 0;
+        background-color: transparent;
+        color: white;
+        font-size: 30px;
+        margin: 20px;
+        align-self: flex-end;
     }
 }
