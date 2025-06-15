@@ -336,13 +336,21 @@ div[class$="_button"] a {
     }
 
     .project-card {
-        width: 90%;
+        width: 100%;
         height: auto;
     }
 
     .project-image {
         width: 100%;
         height: auto;
+    }
+
+    .project-card h3 {
+        font-size: .75rem; 
+    }
+
+    .project-card p {
+        font-size: 0.75rem;
     }
 
     .ab_button,
