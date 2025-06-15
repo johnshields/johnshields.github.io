@@ -432,5 +432,19 @@ div[class$="_button"] a {
             max-width: 300px;
             margin: 10px auto;
         }
+        
+        .sub-section,
+        .sub-section-alternative {
+            padding: 40px 20px;
+        }
+
+        .project-container {
+            padding: 0 10px;
+        }
+        
+        body {
+            padding: 0 10px;
+        }
+
     }
 }
