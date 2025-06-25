@@ -1,5 +1,5 @@
-# John Shields --- Portfolio
+# John Shields -- Portfolio
 
-[Digital Portfolio](https://johnshields.github.io/)...
+[My Digital Portfolio](https://johnshields.github.io/)...
 
 ***
