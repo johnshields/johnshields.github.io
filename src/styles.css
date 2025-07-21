@@ -220,7 +220,7 @@ div[class$="_button"] a {
     line-height: 1.2;
 }
 
-.skills .badge-row {
+.badge-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -228,28 +228,30 @@ div[class$="_button"] a {
     margin: 15px 0;
 }
 
-.skills .badge-row img {
+.badge-row img {
     height: 50px;
     transition: transform 0.2s ease;
 }
 
-.skills .badge-row img:hover {
+.badge-row img:hover {
     transform: scale(1.1);
-}
-
-.badge-row img {
-    transform: scale(1.0);
 }
 
 /* ===== MOBILE BADGE SIZE ===== */
 @media only screen and (max-width: 600px) {
-    .skills .badge-row {
-        gap: 5px;
+    .skills {
+        padding: 0 5px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .badge-row {
+        gap: 2px;
         margin: 5px 0;
     }
 
-    .skills .badge-row img {
-        height: 20px;
+    .badge-row img {
+        height: 18px;
     }
 }
 
@@ -263,7 +265,7 @@ div[class$="_button"] a {
 }
 
 .project-card {
-    background-color: white;
+    background-color: #fafafa;
     width: 375px;
     height: 500px;
     box-shadow: 5px 5px 20px rgba(197, 195, 195, 0.7);
