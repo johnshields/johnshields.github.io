@@ -133,9 +133,11 @@ p {
 .ab_button {
     background-color: #a7becc;
 }
+
 .ab_button:hover {
     background-color: #3a6c83;
 }
+
 .ab_button:active {
     background-color: #A9A9A9;
     color: #808080;
@@ -144,9 +146,11 @@ p {
 .p_button {
     background-color: #5fa079;
 }
+
 .p_button:hover {
     background-color: #436e54;
 }
+
 .p_button:active {
     background-color: #A9A9A9;
     color: #808080;
@@ -155,9 +159,11 @@ p {
 .gh_button {
     background-color: #5f60a0;
 }
+
 .gh_button:hover {
     background-color: #434c6e;
 }
+
 .gh_button:active {
     background-color: #A9A9A9;
     color: #808080;
@@ -166,9 +172,11 @@ p {
 .lt_button {
     background-color: #4682B4;
 }
+
 .lt_button:hover {
     background-color: #275477;
 }
+
 .lt_button:active {
     background-color: #A9A9A9;
     color: #808080;
@@ -203,7 +211,7 @@ div[class$="_button"] a {
 .skills h2 {
     margin-bottom: 0;
     padding-bottom: 0;
-    line-height: 1.1; 
+    line-height: 1.1;
 }
 
 .skills p {
@@ -233,15 +241,12 @@ div[class$="_button"] a {
     transform: scale(1.0);
 }
 
-
-/* ===== MOBILE ===== */
-/* ===== MOBILE ===== */
+/* ===== MOBILE BADGE SIZE ===== */
 @media only screen and (max-width: 600px) {
     .skills .badge-row img {
         height: 35px;
     }
 }
-
 
 /* ===== PROJECTS ===== */
 .project-container {
@@ -407,7 +412,6 @@ a {
         margin: 2px;
         border-radius: 15px;
     }
-
 
     .project-container {
         flex-direction: column;
