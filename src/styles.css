@@ -17,7 +17,7 @@ section {
 }
 
 footer {
-    background-color: #000000;
+    background-color: #23293d;
     color: white;
     text-align: center;
     padding: 80px;
@@ -80,8 +80,8 @@ p {
 
 /* ===== HERO SECTION ===== */
 .hero {
-    background-color: #000000;
-    height: 100vh;
+    background-color: #23293d;
+    height: auto;
     color: white;
     font-size: 40px;
 }
@@ -94,14 +94,11 @@ p {
 }
 
 .hero-text {
-    margin-left: 80px;
-    margin-bottom: 200px;
+    margin: 50px 50px 75px 80px;
 }
 
 .headshot-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 250px;
+    margin-bottom: 0;
 }
 
 .headshot {
@@ -113,6 +110,7 @@ p {
 /* ===== BUTTONS ===== */
 .ab_button,
 .p_button,
+.gh_button,
 .lt_button {
     width: 200px;
     height: 55px;
@@ -127,7 +125,7 @@ p {
 }
 
 .ab_button {
-    background-color: cadetblue;
+    background-color: #a7becc;
 }
 .ab_button:hover {
     background-color: #3a6c83;
@@ -144,6 +142,17 @@ p {
     background-color: #436e54;
 }
 .p_button:active {
+    background-color: #A9A9A9;
+    color: #808080;
+}
+
+.gh_button {
+    background-color: #5f60a0;
+}
+.gh_button:hover {
+    background-color: #434c6e;
+}
+.gh_button:active {
     background-color: #A9A9A9;
     color: #808080;
 }
@@ -360,6 +369,7 @@ div[class$="_button"] a {
 
     .ab_button,
     .p_button,
+    .gh_button,
     .lt_button {
         font-size: .75rem;
         padding-top: 6px;
@@ -428,6 +438,7 @@ div[class$="_button"] a {
         
         .ab_button,
         .p_button,
+        .gh_button,
         .lt_button {
             width: 80%;
             max-width: 300px;
