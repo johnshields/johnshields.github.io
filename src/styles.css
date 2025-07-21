@@ -243,8 +243,13 @@ div[class$="_button"] a {
 
 /* ===== MOBILE BADGE SIZE ===== */
 @media only screen and (max-width: 600px) {
+    .skills .badge-row {
+        gap: 5px;
+        margin: 5px 0;
+    }
+
     .skills .badge-row img {
-        height: 35px;
+        height: 20px;
     }
 }
 
