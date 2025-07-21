@@ -197,7 +197,19 @@ div[class$="_button"] a {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
-    padding: 20px 0;
+    padding: 5px 0;
+}
+
+.skills h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 1.1; 
+}
+
+.skills p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
 .skills .badge-row {
