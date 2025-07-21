@@ -249,7 +249,7 @@ div[class$="_button"] a {
     }
 
     .skills .badge-row img {
-        height: 15px;
+        height: 20px;
     }
 }
 
@@ -434,6 +434,11 @@ a {
     .project-image {
         width: 100%;
         height: auto;
+    }
+
+    .tech-tags h3 {
+        font-size: 0.5rem;
+        font-weight: 400;
     }
 
     .sub-section,
