@@ -194,17 +194,42 @@ div[class$="_button"] a {
 }
 
 .skills {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     text-align: center;
+    padding: 20px 0;
 }
 
-.tech {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 30px;
-    object-fit: contain;
+.skills .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
 }
+
+.skills .badge-row img {
+    height: 40px;
+    transition: transform 0.2s ease;
+}
+
+.skills .badge-row img:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 600px) {
+    .skills .badge-row {
+        justify-content: center;
+        gap: 8px;
+        margin: 10px 0;
+    }
+
+    .skills .badge-row img {
+        height: auto;
+    }
+}
+
 
 /* ===== PROJECTS ===== */
 .project-container {
