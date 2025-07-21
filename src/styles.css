@@ -217,16 +217,15 @@ div[class$="_button"] a {
     transform: scale(1.1);
 }
 
-/* Mobile adjustments */
+/* ===== MOBILE ===== */
 @media only screen and (max-width: 600px) {
-    .skills .badge-row {
-        justify-content: center;
+    .skills .badge-grid {
+        grid-template-columns: repeat(3, 1fr);
         gap: 8px;
-        margin: 10px 0;
     }
 
-    .skills .badge-row img {
-        height: auto;
+    .skills .badge-grid img {
+        height: 35px;
     }
 }
 
