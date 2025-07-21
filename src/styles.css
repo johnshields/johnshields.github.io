@@ -235,13 +235,9 @@ div[class$="_button"] a {
 
 
 /* ===== MOBILE ===== */
+/* ===== MOBILE ===== */
 @media only screen and (max-width: 600px) {
-    .skills .badge-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-    }
-
-    .skills .badge-grid img {
+    .skills .badge-row img {
         height: 35px;
     }
 }
