@@ -438,11 +438,10 @@ a {
         height: auto;
     }
 
-    .tech-tags h3 {
+    h3.tech-tags {
         font-size: 0.5rem;
-        padding: 1px 3px;
-        margin: 2px;
-        display: inline-block;
+        padding: 2px 5px;
+        margin: 2px auto;
     }
 
     .sub-section,
