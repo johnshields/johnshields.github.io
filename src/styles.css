@@ -214,13 +214,11 @@ p {
     text-align: center;
 }
 
-
 .project-image {
     margin-top: 25px;
-    width: 250px;
-    height: 150px;
+    width: 300px;
+    height: 200px;
     border-radius: 5px;
-    object-fit: cover;
 }
 
 .project-card h3 {
@@ -236,8 +234,20 @@ p {
     flex-grow: 1;
 }
 
-.tech-tags {
+
+.project-card p.subtext {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+    color: #333;
+    flex-grow: 1;
+}
+
+.tech-box{
     margin-top: 10px;
+}
+
+.tech-tags {
+    margin-top: 0;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -247,8 +257,8 @@ p {
     border: 1px solid;
     border-radius: 5px;
     padding: 5px;
-    font-size: 0.9rem;
-    margin: 5px auto;
+    font-size: 0.1rem;
+    margin: 50px auto;
     width: fit-content;
     background-color: white;
 }
