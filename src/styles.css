@@ -438,7 +438,9 @@ a {
 
     .tech-tags h3 {
         font-size: 0.5rem;
-        font-weight: 400;
+        padding: 1px 3px;
+        margin: 2px;
+        display: inline-block;
     }
 
     .sub-section,
