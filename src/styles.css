@@ -229,6 +229,11 @@ div[class$="_button"] a {
     transform: scale(1.1);
 }
 
+.badge-row img {
+    transform: scale(1.0);
+}
+
+
 /* ===== MOBILE ===== */
 @media only screen and (max-width: 600px) {
     .skills .badge-grid {
@@ -261,6 +266,11 @@ div[class$="_button"] a {
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease;
+}
+
+.p-title {
+    text-decoration: underline;
+    text-decoration-color: black;
 }
 
 .project-card:hover {
