@@ -275,11 +275,6 @@ div[class$="_button"] a {
     transition: transform 0.3s ease;
 }
 
-.p-title {
-    text-decoration: underline;
-    text-decoration-color: black;
-}
-
 .project-card:hover {
     transform: scale(1.02);
 }
@@ -330,11 +325,14 @@ div[class$="_button"] a {
     display: block;
     border: 1px solid;
     border-radius: 5px;
-    padding: 5px;
-    font-size: 0.9rem;
-    margin: 5px auto;
     width: fit-content;
     background-color: white;
+}
+
+h3.tech-tags {
+    font-size: 1rem;
+    padding: 2px 5px;
+    margin: 10px auto 10px;
 }
 
 /* ===== MISC ===== */
