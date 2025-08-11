@@ -1,5 +1,3 @@
-# John Shields -- Portfolio
+# johnshields.github.io
 
-My [Digital Portfolio](https://johnshields.github.io/)...
-
-***
+- [My portfolio/website](https://johnshields.github.io/)
