@@ -252,13 +252,14 @@ p {
     text-decoration-color: color-mix(in oklab, var(--brand) 40%, transparent);
 }
 
-h2 .header-icon {
-    display: inline-block;
-    width: 1.4em;
-    height: 1.4em;
-    vertical-align: -0.4em;
-    fill: currentColor;
-    stroke: currentColor;
+h2 .header-icon{
+    display:inline-block;
+    width:1.3em;
+    height:auto;
+    max-height:1.1em;
+    aspect-ratio:1 / 1;
+    vertical-align:-0.18em;
+    fill:currentColor;
 }
 
 .skills {
