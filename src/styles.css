@@ -252,7 +252,7 @@ p {
     text-decoration-color: color-mix(in oklab, var(--brand) 40%, transparent);
 }
 
-h2 .icon-book {
+h2 .header-icon {
     display: inline-block;
     width: 1.4em;
     height: 1.4em;
