@@ -201,7 +201,7 @@ div[class$="_button"] a { color: inherit; text-decoration: none; display: inline
 .p_button:active { transform:translateY(0) }
 
 .gh_button {
-    --btn-bg: #703293;
+    --btn-bg: #8645aa;
     --btn-fg: #eef2ff;
     --btn-border:color-mix(in oklab, var(--btn-bg) 65%, black 35%);
     box-shadow:0 1px 6px rgba(0,0,0,.18);

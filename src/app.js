@@ -1,15 +1,21 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const id = this.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if (el) {
-            e.preventDefault();
-            el.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
-
 document.addEventListener('DOMContentLoaded', () => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            const id = anchor.getAttribute('href').slice(1);
+            if (!id) return;
+            const el = document.getElementById(id);
+            if (!el) return;
+
+            e.preventDefault();
+            if (prefersReduced) {
+                el.scrollIntoView();
+            } else {
+                el.scrollIntoView({behavior: 'smooth', block: 'start'});
+            }
+        }, {passive: false});
+    });
+
     const cards = document.querySelectorAll('.project-card');
     cards.forEach(card => {
         const anchor = card.querySelector('.project-link');
@@ -28,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', (e) => {
             if (e.defaultPrevented) return;
             if (e.target.closest('a')) return;
-
             const newTab = e.metaKey || e.ctrlKey;
             go(newTab);
         });
@@ -38,9 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         card.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                go(false);
-            }
+            if (e.key === 'Enter') go(false);
             if (e.key === ' ') {
                 e.preventDefault();
                 go(false);
@@ -51,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const allLinks = document.querySelectorAll('a[href]');
     allLinks.forEach(a => {
         try {
-            const url = new URL(a.href, window.location.href);
+            const url = new URL(a.getAttribute('href'), window.location.href);
             const isHash = a.getAttribute('href')?.startsWith('#');
             const isSameHost = url.host === window.location.host;
             if (!isHash && !isSameHost && !a.hasAttribute('data-noext')) {
@@ -95,55 +98,82 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.textContent = '↑ Top';
-    Object.assign(btn.style, {
-        position: 'fixed',
-        right: '16px',
-        bottom: '16px',
-        padding: '8px 12px',
-        borderRadius: '999px',
-        border: '1px solid var(--border)',
-        background: 'var(--elev)',
-        color: 'var(--text)',
-        boxShadow: '0 6px 20px rgba(0,0,0,.22)',
-        opacity: '0',
-        transform: 'translateY(8px)',
-        transition: 'opacity .2s, transform .2s',
-        pointerEvents: 'none',
-        zIndex: '50'
-    });
-    btn.addEventListener('click', () => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    });
-    document.body.appendChild(btn);
+    if (window.matchMedia('(min-width: 768px)').matches) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = '↑ Top';
+        Object.assign(btn.style, {
+            position: 'fixed',
+            right: '16px',
+            bottom: '16px',
+            padding: '8px 12px',
+            borderRadius: '999px',
+            border: '1px solid var(--border)',
+            background: 'var(--elev)',
+            color: 'var(--text)',
+            boxShadow: '0 6px 20px rgba(0,0,0,.22)',
+            opacity: '0',
+            transform: 'translateY(8px)',
+            transition: 'opacity .2s, transform .2s',
+            pointerEvents: 'none',
+            zIndex: '50'
+        });
+        btn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: prefersReduced ? 'auto' : 'smooth'});
+        });
+        document.body.appendChild(btn);
 
-    const toggleTop = () => {
-        const show = window.scrollY > 600;
-        btn.style.opacity = show ? '1' : '0';
-        btn.style.transform = show ? 'translateY(0)' : 'translateY(8px)';
-        btn.style.pointerEvents = show ? 'auto' : 'none';
-    };
-    toggleTop();
-    window.addEventListener('scroll', toggleTop, {passive: true});
+        const toggleTop = () => {
+            const show = window.scrollY > 600;
+            btn.style.opacity = show ? '1' : '0';
+            btn.style.transform = show ? 'translateY(0)' : 'translateY(8px)';
+            btn.style.pointerEvents = show ? 'auto' : 'none';
+        };
+        toggleTop();
+        window.addEventListener('scroll', toggleTop, {passive: true});
+    }
 });
 
-const emailEl = document.querySelector('.email');
-if (emailEl) {
-    emailEl.addEventListener('click', () => {
-        navigator.clipboard.writeText(emailEl.textContent.trim());
-        // Optional toast
-        const toast = document.createElement('div');
-        toast.textContent = 'Email copied!';
-        Object.assign(toast.style, {
-            position: 'fixed', bottom: '40px', right: '20px',
-            background: 'var(--elev)', color: 'var(--text)',
-            padding: '8px 12px', borderRadius: '6px', opacity: '0',
-            transition: 'opacity .2s'
+(() => {
+    const attach = () => {
+        const emailEl = document.querySelector('.email');
+        if (!emailEl || emailEl.dataset.clipInit) return;
+        emailEl.dataset.clipInit = '1';
+
+        emailEl.style.cursor = 'pointer';
+        emailEl.title = 'Click to copy';
+
+        emailEl.addEventListener('click', () => {
+            const txt = (emailEl.getAttribute('data-email') || emailEl.textContent || '').trim();
+            if (!txt) return;
+            navigator.clipboard.writeText(txt);
+
+            const toast = document.createElement('div');
+            toast.textContent = 'Email copied!';
+            Object.assign(toast.style, {
+                position: 'fixed',
+                bottom: '40px',
+                right: '20px',
+                background: 'var(--elev)',
+                color: 'var(--text)',
+                padding: '8px 12px',
+                borderRadius: '6px',
+                opacity: '0',
+                transition: 'opacity .2s',
+                zIndex: '60'
+            });
+            document.body.appendChild(toast);
+            requestAnimationFrame(() => toast.style.opacity = '1');
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 200);
+            }, 1500);
         });
-        document.body.appendChild(toast);
-        requestAnimationFrame(() => toast.style.opacity = '1');
-        setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 200); }, 1500);
-    });
-}
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attach, {once: true});
+    } else {
+        attach();
+    }
+})();
