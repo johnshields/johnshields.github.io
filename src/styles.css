@@ -33,22 +33,10 @@
     color-scheme: dark;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box
-}
-
-* {
-    margin: 0;
-    padding: 0
-}
-
-html:focus-within {
-    scroll-behavior: smooth
-}
-
-html, body {
-    height: 100%
-}
+*, *::before, *::after { box-sizing: border-box }
+* { margin: 0; padding: 0 }
+html:focus-within { scroll-behavior: smooth }
+html, body { height: 100% }
 
 body {
     font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
@@ -61,24 +49,11 @@ body {
     max-width: 100%;
 }
 
-img, picture, svg, video, canvas {
-    display: block;
-    max-width: 100%
-}
+img, picture, svg, video, canvas { display: block; max-width: 100% }
+a { color: inherit; text-decoration: none }
+:focus-visible { outline: 3px solid color-mix(in oklab, var(--brand) 70%, white 30%); outline-offset: 3px }
 
-a {
-    color: inherit;
-    text-decoration: none
-}
-
-:focus-visible {
-    outline: 3px solid color-mix(in oklab, var(--brand) 70%, white 30%);
-    outline-offset: 3px
-}
-
-section {
-    background: transparent
-}
+section { background: transparent }
 
 footer {
     background: var(--surface);
@@ -110,35 +85,13 @@ li a {
     border-radius: var(--radius-sm);
     transition: background-color .2s, opacity .2s, transform .12s;
 }
+li a:hover { background: var(--elev) }
+li a:active { transform: translateY(1px) }
 
-li a:hover {
-    background: var(--elev)
-}
-
-li a:active {
-    transform: translateY(1px)
-}
-
-h1 {
-    font-size: var(--fs-3xl);
-    letter-spacing: -.02em;
-    line-height: 1.05
-}
-
-h2 {
-    font-size: var(--fs-xl);
-    letter-spacing: -.01em;
-    line-height: 1.15
-}
-
-h3 {
-    font-size: var(--fs-md)
-}
-
-p {
-    font-size: var(--fs-md);
-    color: var(--muted)
-}
+h1 { font-size: var(--fs-3xl); letter-spacing: -.02em; line-height: 1.05 }
+h2 { font-size: var(--fs-xl); letter-spacing: -.01em; line-height: 1.15 }
+h3 { font-size: var(--fs-md) }
+p { font-size: var(--fs-md); color: var(--muted) }
 
 .subtext {
     margin: var(--space-3) 0;
@@ -152,9 +105,10 @@ p {
 .hero {
     position: relative;
     isolation: isolate;
-    background: radial-gradient(1200px 700px at 15% -10%, color-mix(in oklab, white 3%, transparent), transparent),
-    radial-gradient(1200px 700px at 85% 110%, color-mix(in oklab, white 2.5%, transparent), transparent),
-    linear-gradient(180deg, #0c0c0e 0%, #0a0a0b 40%, #0b0b0c 100%);
+    background:
+            radial-gradient(1200px 700px at 15% -10%, color-mix(in oklab, white 3%, transparent), transparent),
+            radial-gradient(1200px 700px at 85% 110%, color-mix(in oklab, white 2.5%, transparent), transparent),
+            linear-gradient(180deg, #0c0c0e 0%, #0a0a0b 40%, #0b0b0c 100%);
     color: var(--text);
     padding: clamp(3rem, 6vw, 6rem) 0;
     border-bottom: 1px solid var(--border);
@@ -171,14 +125,8 @@ p {
     gap: var(--space-6);
 }
 
-.hero-text p {
-    font-size: var(--fs-lg);
-    color: var(--muted)
-}
-
-.hero-text h1 {
-    font-weight: 800
-}
+.hero-text p { font-size: var(--fs-lg); color: var(--muted) }
+.hero-text h1 { font-weight: 800 }
 
 .headshot {
     width: clamp(140px, 24vw, 240px);
@@ -216,103 +164,74 @@ p {
     transition: transform .15s, background-color .2s, border-color .2s, box-shadow .2s;
     will-change: transform;
 }
-
-.button-group div[class$="_button"]:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, .12)
-}
-
-.button-group div[class$="_button"]:active {
-    transform: translateY(0)
-}
-
-div[class$="_button"] a {
-    color: inherit;
-    text-decoration: none;
-    display: inline-block;
-    width: 100%;
-    text-align: center
-}
+.button-group div[class$="_button"]:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0, 0, 0, .12) }
+.button-group div[class$="_button"]:active { transform: translateY(0) }
+div[class$="_button"] a { color: inherit; text-decoration: none; display: inline-block; width: 100%; text-align: center }
 
 .ab_button {
-    --btn-fg: #ffffff;
-    --btn-bg: linear-gradient(180deg,
-    color-mix(in oklab, #ed2c2c 24%, #0d0e10) 0%,
-    color-mix(in oklab, #ed3535 34%, #0d0e10) 100%);
-    --btn-border: color-mix(in oklab, #f33434 55%, var(--border));
-    box-shadow: 0 2px 0 rgba(0, 0, 0, .2), 0 10px 24px rgba(245, 158, 11, .18);
+    --btn-bg: #da4545;
+    --btn-fg: #eef2ff;
+    --btn-border:color-mix(in oklab, var(--btn-bg) 65%, black 35%);
+    box-shadow:0 1px 6px rgba(0,0,0,.18);
 }
-
 .ab_button:hover {
-    --btn-border: color-mix(in oklab, #cd1616 70%, var(--border));
-    transform: translateY(-1px)
+    --btn-bg:color-mix(in oklab, var(--btn-bg) 92%, black 8%);
+    --btn-border:color-mix(in oklab, var(--btn-bg) 55%, black 45%);
+    transform:translateY(-1px);
 }
-
-.ab_button:active {
-    transform: translateY(0)
-}
+.ab_button:active { transform:translateY(0) }
 
 .p_button {
-    --btn-fg: #ffffff;
-    --btn-bg: linear-gradient(180deg,
-    color-mix(in oklab, #06d463 24%, #0d0e10) 0%,
-    color-mix(in oklab, #09d14f 36%, #0d0e10) 100%);
-    --btn-border: color-mix(in oklab, #11d555 55%, var(--border));
-    box-shadow: 0 2px 0 rgba(0, 0, 0, .2), 0 10px 24px rgba(6, 182, 212, .18);
+    --btn-bg: #40935c;
+    --btn-fg: #eef2ff;
+    --btn-border:color-mix(in oklab, var(--btn-bg) 65%, black 35%);
+    box-shadow:0 1px 6px rgba(0,0,0,.18);
 }
-
 .p_button:hover {
-    --btn-border: color-mix(in oklab, #15a53e 70%, var(--border));
-    transform: translateY(-1px)
+    --btn-bg:color-mix(in oklab, var(--btn-bg) 92%, black 8%);
+    --btn-border:color-mix(in oklab, var(--btn-bg) 55%, black 45%);
+    transform:translateY(-1px);
 }
-
-.p_button:active {
-    transform: translateY(0)
-}
+.p_button:active { transform:translateY(0) }
 
 .gh_button {
-    --btn-fg: #ffffff;
-    --btn-bg: linear-gradient(180deg,
-    color-mix(in oklab, #8250df 28%, #0d0e10) 0%,
-    color-mix(in oklab, #8250df 42%, #0d0e10) 100%);
-    --btn-border: color-mix(in oklab, #8250df 60%, var(--border));
-    box-shadow: 0 2px 0 rgba(0, 0, 0, .2), 0 10px 24px rgba(130, 80, 223, .22);
+    --btn-bg: #6d2f91;
+    --btn-fg: #eef2ff;
+    --btn-border:color-mix(in oklab, var(--btn-bg) 65%, black 35%);
+    box-shadow:0 1px 6px rgba(0,0,0,.18);
 }
-
 .gh_button:hover {
-    --btn-border: color-mix(in oklab, #8250df 75%, var(--border));
-    transform: translateY(-1px)
+    --btn-bg:color-mix(in oklab, var(--btn-bg) 92%, black 8%);
+    --btn-border:color-mix(in oklab, var(--btn-bg) 55%, black 45%);
+    transform:translateY(-1px);
 }
-
-.gh_button:active {
-    transform: translateY(0)
-}
+.gh_button:active { transform:translateY(0) }
 
 .lt_button {
-    --btn-fg: #ffffff;
-    --btn-bg: linear-gradient(180deg,
-    color-mix(in oklab, #0A66C2 28%, #0d0e10) 0%,
-    color-mix(in oklab, #0A66C2 42%, #0d0e10) 100%);
-    --btn-border: color-mix(in oklab, #0A66C2 60%, var(--border));
-    box-shadow: 0 2px 0 rgba(0, 0, 0, .2), 0 10px 24px rgba(10, 102, 194, .22);
+    --btn-bg: #2e2e9f;
+    --btn-fg: #eef2ff;
+    --btn-border:color-mix(in oklab, var(--btn-bg) 65%, black 35%);
+    box-shadow:0 1px 6px rgba(0,0,0,.18);
 }
-
 .lt_button:hover {
-    --btn-border: color-mix(in oklab, #0A66C2 75%, var(--border));
-    transform: translateY(-1px)
+    --btn-bg:color-mix(in oklab, var(--btn-bg) 92%, black 8%);
+    --btn-border:color-mix(in oklab, var(--btn-bg) 55%, black 45%);
+    transform:translateY(-1px);
 }
+.lt_button:active { transform:translateY(0) }
 
-.lt_button:active {
-    transform: translateY(0)
-}
-
-
+/* MAIN CONTENT SECTIONS: off-white/grey with black text */
 .sub-section, .sub-section-alternative {
     max-width: 1100px;
     margin: 0 auto;
     padding: clamp(var(--space-8), 6vw, var(--space-12)) clamp(var(--space-4), 4vw, var(--space-12));
-    background: transparent;
+    background: #f4f4f5;
+    color: #111;
 }
+.sub-section p,
+.sub-section .subtext,
+.sub-section-alternative p,
+.sub-section-alternative .subtext { color: #111 }
 
 .sub-section .info > h2 u, #skills h2 u, #projects h2 u {
     text-underline-offset: .22em;
@@ -324,19 +243,10 @@ div[class$="_button"] a {
     max-width: 100%;
     margin: 0 auto;
     text-align: left;
-    padding: 5px 0
+    padding: 5px 0;
 }
-
-.skills h2 {
-    margin-bottom: 0;
-    text-align: left
-}
-
-.skills p {
-    margin: 0 0 20px 0;
-    line-height: 1.2;
-    text-align: left
-}
+.skills h2 { margin-bottom: 0; text-align: left }
+.skills p { margin: 0 0 20px 0; line-height: 1.2; text-align: left }
 
 .badge-row {
     --badge-h: clamp(36px, 3.4vw, 50px);
@@ -349,7 +259,6 @@ div[class$="_button"] a {
     margin:15px 0;
     line-height:0;
 }
-
 .badge-row img {
     height:var(--badge-h);
     border-radius:10px;
@@ -362,7 +271,6 @@ div[class$="_button"] a {
     transition:transform .18s ease, filter .18s ease, box-shadow .18s ease;
     will-change:transform, filter;
 }
-
 .badge-row img:hover {
     transform:translateY(-1px) scale(1.06);
     filter:saturate(1.08) contrast(1.06);
@@ -371,22 +279,12 @@ div[class$="_button"] a {
             0 2px 0 rgba(0,0,0,.4),
             0 14px 36px rgba(0,0,0,.35);
 }
-
 @media (max-width:600px){
     .badge-row { --badge-h: 28px; --badge-gap: 6px }
 }
-
 @media (prefers-reduced-motion:reduce){
     .badge-row img { transition:none }
     .badge-row img:hover { transform:none }
-}
-
-@media (max-width: 600px) {
-    .skills {
-        padding: 0 5px;
-        max-width: 100%;
-        margin: 0 auto
-    }
 }
 
 .project-container {
@@ -397,11 +295,13 @@ div[class$="_button"] a {
     padding: 0 10px;
 }
 
+/* PROJECT CARDS: washed black with off-white/grey text */
 .project-card {
-    background-color: #fafafa;
+    background-color: #121214;
+    color: #e5e5e5;
     width: 450px;
     height: 500px;
-    box-shadow: 5px 5px 20px rgba(197, 195, 195, .7);
+    box-shadow: 5px 5px 20px rgba(0,0,0,.7);
     margin: 10px;
     border-radius: 10px;
     overflow: hidden;
@@ -410,10 +310,7 @@ div[class$="_button"] a {
     flex-direction: column;
     transition: transform .3s ease;
 }
-
-.project-card:hover {
-    transform: scale(1.02)
-}
+.project-card:hover { transform: scale(1.02) }
 
 .project-image {
     margin: 25px auto 0;
@@ -424,34 +321,30 @@ div[class$="_button"] a {
     object-fit: contain;
     transition: transform .3s ease;
 }
-
-.project-image:hover {
-    transform: scale(1.02)
-}
+.project-image:hover { transform: scale(1.02) }
 
 .project-card h3 {
     font-size: 1.2rem;
     margin: 1rem 0 .5rem;
     font-weight: 600;
-    color: #111;
+    color: #fafafa;
 }
-
 .project-card p {
     font-size: .95rem;
     padding: 0 1rem;
-    color: #333;
+    color: #d1d1d1;
     text-align: left;
     flex-grow: 1;
 }
-
 .project-card p.subtext {
     font-size: .9rem;
     padding: 0 1rem;
-    color: #333;
+    color: #d1d1d1;
     text-align: left;
     flex-grow: 1;
 }
 
+/* keep global tech-box, but adjust when inside dark cards */
 .tech-box {
     margin-top:auto;
     border-top:1px solid #ccc;
@@ -461,6 +354,7 @@ div[class$="_button"] a {
     gap:6px;
     justify-content:center;
 }
+.project-card .tech-box { border-top:1px solid #2a2a2a }
 .tech-box img {
     height:28px;
     border-radius:8px;
@@ -474,9 +368,7 @@ div[class$="_button"] a {
     box-shadow:0 1px 0 rgba(255,255,255,.06) inset, 0 10px 26px rgba(0,0,0,.3);
 }
 @media (max-width:600px){ .tech-box img { height:24px } }
-.tech-box hr {
-    display: none !important
-}
+.tech-box hr { display: none !important }
 
 .tech-tags, h3.tech-tags {
     display: inline-block;
@@ -489,35 +381,18 @@ div[class$="_button"] a {
     margin: 0;
 }
 
-.logo {
-    height: 80px;
-    margin: 30px
-}
-
-.socials {
-    padding-bottom: 200px
-}
-
-.social {
-    margin: 10px;
-    height: 80px;
-    width: 80px
-}
-
-svg:hover {
-    opacity: .8
-}
+.logo { height: 80px; margin: 30px }
+.socials { padding-bottom: 200px }
+.social { margin: 10px; height: 80px; width: 80px }
+svg:hover { opacity: .8 }
 
 a.hyper-link {
     color: var(--brand);
     font-weight: 700;
     text-decoration: underline;
-    text-underline-offset: .22em
+    text-underline-offset: .22em;
 }
-
-.email:hover {
-    color: var(--brand-2)
-}
+.email:hover { color: var(--brand-2) }
 
 #contact-me h2 {
     display: inline-flex;
@@ -528,24 +403,12 @@ a.hyper-link {
     border-radius: var(--radius-sm);
     transition: background-color .2s, transform .15s;
 }
-
-#contact-me h2:hover {
-    background: var(--elev);
-    transform: translateY(-1px)
-}
+#contact-me h2:hover { background: var(--elev); transform: translateY(-1px) }
 
 @media (max-width: 1000px) {
-    h1 {
-        font-size: 2rem
-    }
-
-    h2 {
-        font-size: 1.25rem
-    }
-
-    p {
-        font-size: 1rem
-    }
+    h1 { font-size: 2rem }
+    h2 { font-size: 1.25rem }
+    p { font-size: 1rem }
 
     .hero-area {
         flex-direction: column;
@@ -554,90 +417,26 @@ a.hyper-link {
         padding: 0 20px;
         display: flex;
     }
+    .hero-text h1 { font-size: 40px }
+    .hero-text p { font-size: 18px }
+    .headshot { width: 180px; margin: 0 auto }
 
-    .hero-text h1 {
-        font-size: 40px
-    }
+    .button-group { justify-content: center; flex-wrap: wrap; gap: 5px }
+    .button-group div[class$="_button"] { min-width: 10rem; min-height: 2rem; font-size: var(--fs-xs); border-radius: 15px }
 
-    .hero-text p {
-        font-size: 18px
-    }
+    .project-container { flex-direction: column; align-items: center; padding: 0 10px }
+    .project-card { width: auto; max-width: 100%; margin: 10px 0; height: auto }
+    .project-image { width: 100%; height: auto; max-height: none }
 
-    .headshot {
-        width: 180px;
-        margin: 0 auto
-    }
-
-    .button-group {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 5px
-    }
-
-    .button-group div[class$="_button"] {
-        min-width: 7rem;
-        min-height: 2.4rem;
-        font-size: var(--fs-xs);
-        border-radius: 15px
-    }
-
-    .project-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 0 10px
-    }
-
-    .project-card {
-        width: auto;
-        max-width: 100%;
-        margin: 10px 0;
-        height: auto
-    }
-
-    .project-image {
-        width: 100%;
-        height: auto;
-        max-height: none
-    }
-
-    h3.tech-tags {
-        font-size: .8rem;
-        padding: 4px 8px
-    }
-
-    .sub-section, .sub-section-alternative {
-        padding: 40px 20px
-    }
-
-    body {
-        padding: 0
-    }
+    h3.tech-tags { font-size: .8rem; padding: 4px 8px }
+    .sub-section, .sub-section-alternative { padding: 40px 20px }
+    body { padding: 0 }
 }
 
 @media (prefers-reduced-motion: reduce) {
     * {
         animation: none !important;
         transition: none !important;
-        scroll-behavior: auto !important
-    }
-}
-
-@media print {
-    :root {
-        color-scheme: light
-    }
-
-    body {
-        background: #fff;
-        color: #000
-    }
-
-    .hero, footer {
-        border: 0;
-        background: #fff
-    }
-
-    .button-group, .socials {
-        display: none !important
+        scroll-behavior: auto !important;
     }
 }
