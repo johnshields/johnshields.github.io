@@ -617,6 +617,9 @@ svg:hover {
 
     .headshot {
         width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
         margin: 0 auto;
     }
 
