@@ -252,7 +252,7 @@ li a:active {
     font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.3px;
+    letter-spacing: 3px;
     color: white;
     min-width: 150px;
     justify-content: center;
@@ -263,7 +263,7 @@ li a:active {
 }
 
 .contact-badge {
-    background: linear-gradient(180deg, #E05D44, #E05D44);
+    background: linear-gradient(180deg, #48b857, #48b857);
 }
 
 .hero-contact-link:hover .custom-badge,

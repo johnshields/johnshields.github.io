@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeBackToTop();
 });
 
+
+
 function initializeSmoothScrolling() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -171,7 +173,7 @@ function initializeBackToTop() {
 }
 
 function copyEmail() {
-    const email = 'shields.johnd@gmail.com';
+    const email = atob('am9obnNobGRzQG91dGxvb2suY29t');
 
     navigator.clipboard.writeText(email).then(() => {
         showNotification('Email copied to clipboard!');
