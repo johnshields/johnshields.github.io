@@ -1,9 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    initializeSmoothScrolling();
+    initializeProjectCards();
+    initializeExternalLinks();
+    initializeNavigation();
+    initializeBackToTop();
+});
+
+function initializeSmoothScrolling() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (e) => {
             const id = anchor.getAttribute('href').slice(1);
             if (!id) return;
+
             const el = document.getElementById(id);
             if (!el) return;
 
@@ -11,12 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (prefersReduced) {
                 el.scrollIntoView();
             } else {
-                el.scrollIntoView({behavior: 'smooth', block: 'start'});
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
-        }, {passive: false});
+        }, { passive: false });
     });
+}
 
+function initializeProjectCards() {
     const cards = document.querySelectorAll('.project-card');
+
     cards.forEach(card => {
         const anchor = card.querySelector('.project-link');
         if (!anchor || !anchor.href) return;
@@ -50,13 +63,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+}
 
+function initializeExternalLinks() {
     const allLinks = document.querySelectorAll('a[href]');
+
     allLinks.forEach(a => {
         try {
             const url = new URL(a.getAttribute('href'), window.location.href);
             const isHash = a.getAttribute('href')?.startsWith('#');
             const isSameHost = url.host === window.location.host;
+
             if (!isHash && !isSameHost && !a.hasAttribute('data-noext')) {
                 a.target = '_blank';
                 const rel = new Set((a.rel || '').split(/\s+/).filter(Boolean));
@@ -65,11 +82,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 a.rel = Array.from(rel).join(' ');
             }
         } catch {
+            // Ignore invalid URLs
         }
     });
+}
 
+function initializeNavigation() {
     const sectionIds = Array.from(document.querySelectorAll('section[id]')).map(s => s.id);
     const navMap = new Map();
+
     document.querySelectorAll('nav a[href^="#"]').forEach(link => {
         const id = link.getAttribute('href').slice(1);
         if (id) navMap.set(id, link);
@@ -87,49 +108,121 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(e => {
                 if (!e.isIntersecting) return;
                 const id = e.target.id;
-                if (!top || e.intersectionRatio > top.ratio) top = {id, ratio: e.intersectionRatio};
+                if (!top || e.intersectionRatio > top.ratio) {
+                    top = { id, ratio: e.intersectionRatio };
+                }
             });
             if (top) setActive(top.id);
-        }, {rootMargin: '0px 0px -40% 0px', threshold: [0.2, 0.4, 0.6, 0.8, 1]});
+        }, {
+            rootMargin: '0px 0px -40% 0px',
+            threshold: [0.2, 0.4, 0.6, 0.8, 1]
+        });
 
         sectionIds.forEach(id => {
             const el = document.getElementById(id);
             if (el) io.observe(el);
         });
     }
+}
 
-    if (window.matchMedia('(min-width: 768px)').matches) {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.textContent = '↑ Top';
-        Object.assign(btn.style, {
-            position: 'fixed',
-            right: '16px',
-            bottom: '16px',
-            padding: '8px 12px',
-            borderRadius: '999px',
-            border: '1px solid var(--border)',
-            background: 'var(--elev)',
-            color: 'var(--text)',
-            boxShadow: '0 6px 20px rgba(0,0,0,.22)',
-            opacity: '0',
-            transform: 'translateY(8px)',
-            transition: 'opacity .2s, transform .2s',
-            pointerEvents: 'none',
-            zIndex: '50'
-        });
-        btn.addEventListener('click', () => {
-            window.scrollTo({top: 0, behavior: prefersReduced ? 'auto' : 'smooth'});
-        });
-        document.body.appendChild(btn);
+function initializeBackToTop() {
+    if (!window.matchMedia('(min-width: 768px)').matches) return;
 
-        const toggleTop = () => {
-            const show = window.scrollY > 600;
-            btn.style.opacity = show ? '1' : '0';
-            btn.style.transform = show ? 'translateY(0)' : 'translateY(8px)';
-            btn.style.pointerEvents = show ? 'auto' : 'none';
-        };
-        toggleTop();
-        window.addEventListener('scroll', toggleTop, {passive: true});
-    }
-});
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = '↑ Top';
+    Object.assign(btn.style, {
+        position: 'fixed',
+        right: '16px',
+        bottom: '16px',
+        padding: '8px 12px',
+        borderRadius: '999px',
+        border: '1px solid var(--border)',
+        background: 'var(--elev)',
+        color: 'var(--text)',
+        boxShadow: '0 6px 20px rgba(0,0,0,.22)',
+        opacity: '0',
+        transform: 'translateY(8px)',
+        transition: 'opacity .2s, transform .2s',
+        pointerEvents: 'none',
+        zIndex: '50'
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: prefersReduced ? 'auto' : 'smooth'
+        });
+    });
+
+    document.body.appendChild(btn);
+
+    const toggleTop = () => {
+        const show = window.scrollY > 600;
+        btn.style.opacity = show ? '1' : '0';
+        btn.style.transform = show ? 'translateY(0)' : 'translateY(8px)';
+        btn.style.pointerEvents = show ? 'auto' : 'none';
+    };
+
+    toggleTop();
+    window.addEventListener('scroll', toggleTop, { passive: true });
+}
+
+function copyEmail() {
+    const email = 'shields.johnd@gmail.com';
+
+    navigator.clipboard.writeText(email).then(() => {
+        showNotification('Email copied to clipboard!');
+    }).catch(() => {
+        fallbackCopyToClipboard(email);
+    });
+}
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--elev);
+        color: var(--text);
+        padding: 12px 20px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 1000;
+        font-size: 14px;
+        animation: slideIn 0.3s ease;
+    `;
+
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.animation = 'slideIn 0.3s ease reverse';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+            document.head.removeChild(style);
+        }, 300);
+    }, 2000);
+}
+
+function fallbackCopyToClipboard(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Email copied to clipboard: ' + text);
+}
