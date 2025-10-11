@@ -568,7 +568,7 @@ svg:hover {
         height: 28px;
         font-size: 11px;
         gap: 8px;
-        padding: 0 4px;
+        padding: 0 10px;
         min-width: 90px;
         letter-spacing: 1px;
     }
