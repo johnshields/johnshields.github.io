@@ -570,6 +570,7 @@ svg:hover {
         gap: 8px;
         padding: 0 4px;
         min-width: 90px;
+        letter-spacing: 1px;
     }
 
     .custom-badge i {
