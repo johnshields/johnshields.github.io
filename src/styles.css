@@ -555,9 +555,6 @@ h2 .header-icon {
     color: white;
 }
 
-svg:hover {
-    opacity: .8;
-}
 
 @media (max-width: 600px) {
     .button-group a img {
