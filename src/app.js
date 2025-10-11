@@ -185,36 +185,14 @@ function copyEmail() {
 function showNotification(message) {
     const notification = document.createElement('div');
     notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: #48b857;
-        color: #000;
-        padding: 12px 20px;
-        border-radius: 8px;
-        border: 1px solid var(--border);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        z-index: 1000;
-        font-size: 14px;
-        animation: slideIn 0.3s ease;
-    `;
+    notification.className = 'notification';
 
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-    `;
-    document.head.appendChild(style);
     document.body.appendChild(notification);
 
     setTimeout(() => {
         notification.style.animation = 'slideIn 0.3s ease reverse';
         setTimeout(() => {
             document.body.removeChild(notification);
-            document.head.removeChild(style);
         }, 300);
     }, 2000);
 }
