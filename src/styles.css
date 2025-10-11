@@ -264,6 +264,7 @@ li a:active {
 
 .contact-badge {
     background: linear-gradient(180deg, #48b857, #48b857);
+    color: #000;
 }
 
 .hero-contact-link:hover .custom-badge,

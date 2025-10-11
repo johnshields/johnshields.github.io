@@ -189,8 +189,8 @@ function showNotification(message) {
         position: fixed;
         top: 20px;
         right: 20px;
-        background: var(--elev);
-        color: var(--text);
+        background: #48b857;
+        color: #000;
         padding: 12px 20px;
         border-radius: 8px;
         border: 1px solid var(--border);
