@@ -586,36 +586,6 @@ h2 .header-icon {
     }
 }
 
-
-/* Mobile phones */
-@media (max-width: 600px) {
-    .button-group a img {
-        height: 28px;
-    }
-
-    .custom-badge {
-        height: 28px;
-        font-size: 11px;
-        gap: 8px;
-        padding: 0 10px;
-        min-width: 90px;
-        letter-spacing: 1px;
-    }
-
-    .custom-badge i {
-        font-size: 12px;
-    }
-
-    .badge-row {
-        --badge-h: 28px;
-        --badge-gap: 6px;
-    }
-
-    .tech-box img {
-        height: 24px;
-    }
-}
-
 /* Tablets and smaller screens */
 @media (max-width: 1024px) {
     h1 {
@@ -662,16 +632,16 @@ h2 .header-icon {
     }
 
     .custom-badge {
-        height: 36px !important;
-        font-size: 13px !important;
-        gap: 10px !important;
-        padding: 0 12px !important;
-        min-width: 120px !important;
-        letter-spacing: 1.5px !important;
+        height: 36px;
+        font-size: 14px;
+        gap: 8px;
+        padding: 0 10px;
+        min-width: 90px;
+        letter-spacing: 1px;
     }
 
     .custom-badge i {
-        font-size: 16px !important;
+        font-size: 12px;
     }
 
     .project-container {
@@ -704,6 +674,35 @@ h2 .header-icon {
 
     body {
         padding: 0;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+    .button-group a img {
+        height: 28px;
+    }
+
+    .custom-badge {
+        height: 28px;
+        font-size: 11px;
+        gap: 8px;
+        padding: 0 10px;
+        min-width: 90px;
+        letter-spacing: 1px;
+    }
+
+    .custom-badge i {
+        font-size: 12px;
+    }
+
+    .badge-row {
+        --badge-h: 28px;
+        --badge-gap: 6px;
+    }
+
+    .tech-box img {
+        height: 24px;
     }
 }
 
