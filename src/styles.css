@@ -639,7 +639,7 @@ h2 .header-icon {
 
     .custom-badge {
         height: 36px;
-        font-size: 12px;
+        font-size: 14px;
         gap: 8px;
         padding: 0 10px;
         min-width: 90px;
@@ -670,7 +670,7 @@ h2 .header-icon {
     }
 
     .tech-box img {
-        height: 18px;
+        height: 30px;
     }
 
     .sub-section,
@@ -707,8 +707,12 @@ h2 .header-icon {
         --badge-gap: 6px;
     }
 
-    .tech-box img {
-        height: 24px;
+    .project-container {
+        padding: 0 8px;
+    }
+
+    .project-card {
+        max-width: 250%;
     }
 }
 
