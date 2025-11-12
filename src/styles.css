@@ -386,16 +386,16 @@ h2 .header-icon {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 0 10px;
+    padding: 0 5px;
 }
 
 .project-card {
     background-color: #121214;
     color: #e5e5e5;
     width: 460px;
-    height: 500px;
+    height: 520px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, .7);
-    margin: 10px;
+    margin: 5px;
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
