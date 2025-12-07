@@ -252,7 +252,7 @@ li a:active {
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
     color: white;
     min-width: 150px;
     justify-content: center;
@@ -643,7 +643,7 @@ h2 .header-icon {
         gap: 8px;
         padding: 0 10px;
         min-width: 90px;
-        letter-spacing: 1px;
+        letter-spacing: 3px;
     }
 
     .custom-badge i {
