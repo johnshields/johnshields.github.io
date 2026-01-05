@@ -173,7 +173,7 @@ function initializeBackToTop() {
 }
 
 function copyEmail() {
-    const email = atob('am9obnNobGRzQG91dGxvb2suY29t');
+    const email = atob('c2hpZWxkcy5qb2huZEBnbWFpbC5jb20=');
 
     navigator.clipboard.writeText(email).then(() => {
         showNotification('Email copied to clipboard!');
