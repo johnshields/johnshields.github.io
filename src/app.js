@@ -1,7 +1,9 @@
 import { projects } from './data/projects.js';
 import { badges, badgeLabels } from './data/badges.js';
+import { about } from './data/about.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    renderAbout();
     renderProjects();
     initializeSmoothScrolling();
     initializeProjectCards();
@@ -9,6 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeBackToTop();
     initializeContactButton();
 });
+
+function renderAbout() {
+    const mount = document.getElementById('about-paragraphs');
+    if (!mount) return;
+
+    mount.innerHTML = about.map(html => `<p>${html}</p>`).join('');
+}
 
 function renderProjects() {
     const mount = document.getElementById('project-container');
