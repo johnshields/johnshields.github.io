@@ -1,9 +1,36 @@
+import { projects } from './data/projects.js';
+import { badges, badgeLabels } from './data/badges.js';
+
 document.addEventListener('DOMContentLoaded', () => {
+    renderProjects();
     initializeSmoothScrolling();
     initializeProjectCards();
     initializeExternalLinks();
     initializeBackToTop();
+    initializeContactButton();
 });
+
+function renderProjects() {
+    const mount = document.getElementById('project-container');
+    if (!mount) return;
+
+    const visible = projects.filter(p => !p.archived);
+
+    mount.innerHTML = visible.map(p => `
+        <article class="project-card">
+            <a class="project-link" href="${p.url}" target="_blank" rel="noopener noreferrer">
+                <img class="project-image" src="${p.img}" alt="${p.alt ?? p.title}" width="400" height="220" loading="lazy" decoding="async">
+            </a>
+            <h3 class="p-title">${p.title}</h3>
+            <p class="subtext">${p.desc}</p>
+            <div class="tech-box">
+                ${p.tech.map(key => `
+                    <img loading="lazy" decoding="async" src="${badges[key]}" alt="${badgeLabels[key] ?? key}">
+                `).join('')}
+            </div>
+        </article>
+    `).join('');
+}
 
 function initializeSmoothScrolling() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -111,6 +138,11 @@ function initializeBackToTop() {
 
     toggleTop();
     window.addEventListener('scroll', toggleTop, { passive: true });
+}
+
+function initializeContactButton() {
+    const btn = document.getElementById('copy-email-btn');
+    if (btn) btn.addEventListener('click', copyEmail);
 }
 
 function copyEmail() {

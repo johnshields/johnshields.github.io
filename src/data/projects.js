@@ -1,0 +1,38 @@
+export const projects = [
+    {
+        title: 'Slate Runner',
+        img: 'src/img/projects/slaterunner.png',
+        alt: 'SLateRunner',
+        url: 'https://github.com/johnshields/slate_runner',
+        desc: 'A RESTful API for visual effects pipelines, developed to support post-production workflows. Built with FastAPI and SQLAlchemy, featuring secure authentication and scalable asset, shot, and render management.',
+        tech: ['python', 'fastapi', 'postgresql'],
+        archived: false,
+    },
+    {
+        title: 'Smoke Break',
+        img: 'src/img/projects/smoke_break.jpg',
+        alt: 'Smoke Break',
+        url: 'https://github.com/johnshields/smoke-break',
+        desc: 'A stylised survival game set on a distant alien planet. Built in Unity with exploration, dynamic controls, progression, scavenging, combat, enemy AI, and a cloud save system. Currently, in development with a prototype in place.',
+        tech: ['dotnet', 'unity', 'blender'],
+        archived: false,
+    },
+    {
+        title: 'The Celestial Beyonds',
+        img: 'src/img/projects/beyonds.gif',
+        alt: 'The Celestial Beyonds',
+        url: 'https://github.com/johnshields/celestial-beyonds',
+        desc: 'A bee-themed space hub exploration and action platformer created for my MSc dissertation, exploring AI companionship in Serious Games. Built in Unity with real-time AI dialogue via a Python–Flask chatbot, deployed to WebGL and AWS EC2.',
+        tech: ['dotnet', 'unity', 'python', 'threedsmax', 'aws'],
+        archived: false,
+    },
+    {
+        title: 'Repota',
+        img: 'src/img/projects/repota.png',
+        alt: 'Repota',
+        url: 'https://github.com/johnshields/Repota-App',
+        desc: 'A CRUD web app for automobile technicians to manage service reports, developed for my BSc dissertation. Built with a Go microservices backend and Angular frontend, deployed on AWS with secure authentication.',
+        tech: ['go', 'angular', 'mysql', 'aws'],
+        archived: false,
+    },
+];
