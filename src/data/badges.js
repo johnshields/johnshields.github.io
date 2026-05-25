@@ -16,6 +16,10 @@ export const badges = {
     go: badge('Go', '00ADD8', 'go'),
     angular: badge('Angular', 'DD0031', 'angular'),
     mysql: badge('MySQL', '4479A1', 'mysql'),
+    photoshop: badge('Photoshop', '31A8FF', 'adobephotoshop'),
+    premierepro: badge('Premiere Pro', '9999FF', 'adobepremierepro'),
+    flutter: badge('Flutter', '02569B', 'flutter'),
+    cloudflare: badge('Cloudflare', 'F38020', 'cloudflare'),
 };
 
 export const badgeLabels = {
@@ -30,4 +34,8 @@ export const badgeLabels = {
     go: 'Go',
     angular: 'Angular',
     mysql: 'MySQL',
+    photoshop: 'Photoshop',
+    premierepro: 'Premiere Pro',
+    flutter: 'Flutter',
+    cloudflare: 'Cloudflare',
 };

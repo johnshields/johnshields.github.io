@@ -1,5 +1,14 @@
 export const projects = [
     {
+        title: 'Kurl',
+        img: 'src/img/projects/kurl.png',
+        alt: 'Kurl',
+        url: 'https://github.com/johnshields/kurl',
+        desc: 'A cross-platform music sharing app that intercepts streaming share links and converts them to whatever service the recipient uses. Built with Python on Cloudflare Workers (Pyodide runtime) and a Flutter client for iOS, Android, and Web.',
+        tech: ['python', 'flutter', 'cloudflare'],
+        archived: false,
+    },
+    {
         title: 'Slate Runner',
         img: 'src/img/projects/slaterunner.png',
         alt: 'SLateRunner',
@@ -33,6 +42,15 @@ export const projects = [
         url: 'https://github.com/johnshields/Repota-App',
         desc: 'A CRUD web app for automobile technicians to manage service reports, developed for my BSc dissertation. Built with a Go microservices backend and Angular frontend, deployed on AWS with secure authentication.',
         tech: ['go', 'angular', 'mysql', 'aws'],
-        archived: false,
+        archived: true,
+    },
+    {
+        title: 'Dunkirk Spitfire Re-creation',
+        img: 'src/img/projects/dunkirk.gif',
+        alt: 'Dunkirk Spitfire Re-creation',
+        url: 'https://www.artstation.com/artwork/g8QPWK',
+        desc: 'A VFX re-creation in 3ds Max of the burning Spitfire scene from the film Dunkirk (2017), directed by Christopher Nolan with VFX by DNEG.',
+        tech: ['threedsmax', 'photoshop', 'premierepro'],
+        archived: true,
     },
 ];
