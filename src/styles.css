@@ -206,7 +206,7 @@ footer {
     border-radius: 10px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     padding: 0 15px;
     background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, 0));
     transition: transform .18s ease, filter .18s ease;
