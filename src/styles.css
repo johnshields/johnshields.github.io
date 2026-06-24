@@ -598,9 +598,17 @@ h2 .header-icon {
         font-size: 12px;
     }
 
+    .badge-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+    }
+
     .badge-row {
+        display: contents;
         --badge-h: 28px;
-        --badge-gap: 6px;
     }
 
     .project-container {
