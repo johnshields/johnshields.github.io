@@ -158,24 +158,32 @@ function copyEmail() {
     const email = atob('c2hpZWxkcy5qb2huZEBnbWFpbC5jb20=');
 
     navigator.clipboard.writeText(email).then(() => {
-        showNotification('Email copied to clipboard!');
+        showCopied();
     }).catch(() => {
         fallbackCopyToClipboard(email);
     });
 }
 
-function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.textContent = message;
-    notification.className = 'notification';
+let copyResetTimer;
 
-    document.body.appendChild(notification);
+function showCopied() {
+    const btn = document.getElementById('copy-email-btn');
+    if (!btn) return;
 
-    setTimeout(() => {
-        notification.style.animation = 'slideIn 0.3s ease reverse';
-        setTimeout(() => {
-            document.body.removeChild(notification);
-        }, 300);
+    const badge = btn.querySelector('.custom-badge');
+    const icon = btn.querySelector('i');
+    const label = btn.querySelector('span');
+    if (!badge || !icon || !label) return;
+
+    badge.classList.add('is-copied');
+    icon.className = 'fa fa-check';
+    label.textContent = 'COPIED';
+
+    clearTimeout(copyResetTimer);
+    copyResetTimer = setTimeout(() => {
+        badge.classList.remove('is-copied');
+        icon.className = 'fa fa-envelope';
+        label.textContent = 'EMAIL';
     }, 2000);
 }
 
@@ -186,5 +194,5 @@ function fallbackCopyToClipboard(text) {
     textArea.select();
     document.execCommand('copy');
     document.body.removeChild(textArea);
-    alert('Email copied to clipboard: ' + text);
+    showCopied();
 }
