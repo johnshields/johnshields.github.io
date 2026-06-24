@@ -1,8 +1,10 @@
 import { projects } from './data/projects.js';
 import { badges, badgeLabels } from './data/badges.js';
 import { about } from './data/about.js';
+import { personSchema } from './data/schema.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    injectSchema();
     renderAbout();
     renderProjects();
     initializeSmoothScrolling();
@@ -11,6 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeBackToTop();
     initializeContactButton();
 });
+
+function injectSchema() {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(personSchema);
+    document.head.appendChild(script);
+}
 
 function renderAbout() {
     const mount = document.getElementById('about-paragraphs');
