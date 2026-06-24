@@ -226,7 +226,7 @@ footer {
 }
 
 .contact-badge {
-    background: linear-gradient(180deg, #58a362, #58a362);
+    background: linear-gradient(180deg, var(--text), var(--text));
     color: #000;
 }
 
@@ -475,8 +475,8 @@ h2 .header-icon {
     top: 20px;
     right: 20px;
     z-index: 1000;
-    background: #48b857;
-    color: #000;
+    background: #000;
+    color: #48b857;
     padding: 1rem 2rem;
     border-radius: 10px;
     font-weight: 600;
