@@ -249,6 +249,11 @@ footer {
     color: #111;
 }
 
+.sub-section-alternative {
+    padding-left: clamp(var(--space-3), 3vw, 36px);
+    padding-right: clamp(var(--space-3), 3vw, 36px);
+}
+
 .sub-section p,
 .sub-section .subtext,
 .sub-section-alternative p,
@@ -346,7 +351,6 @@ h2 .header-icon {
     color: #e5e5e5;
     width: 460px;
     height: 520px;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, .7);
     margin: 5px;
     border-radius: 10px;
     overflow: hidden;
@@ -423,6 +427,105 @@ h2 .header-icon {
     transform: translateY(-1px) scale(1.04);
     filter: saturate(1.05) contrast(1.04);
     box-shadow: 0 1px 0 rgba(255, 255, 255, .06) inset, 0 10px 26px rgba(0, 0, 0, .3);
+}
+
+/**
+ * Projects carousel
+ * Horizontal scroll-snap paging with touch swipe, arrows, and dots
+ */
+.project-carousel {
+    position: relative;
+    width: 100%;
+}
+
+.project-viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.project-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+.project-track {
+    display: flex;
+}
+
+.project-page {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    padding: 5px;
+    align-content: start;
+}
+
+.project-page .project-card {
+    width: 100%;
+    margin: 0;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 26px;
+    height: 44px;
+    border: none;
+    background: none;
+    color: #111;
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform .15s ease, opacity .15s ease;
+}
+
+.carousel-arrow:hover {
+    transform: translateY(-50%) scale(1.18);
+}
+
+.carousel-arrow.prev {
+    left: -30px;
+}
+
+.carousel-arrow.next {
+    right: -30px;
+}
+
+.carousel-arrow[disabled] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.carousel-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    background: #c4c4c8;
+    cursor: pointer;
+    transition: width .2s ease, background .2s ease;
+}
+
+.carousel-dot.is-active {
+    width: 24px;
+    background: #111;
 }
 
 .contact-container {
@@ -617,6 +720,16 @@ h2 .header-icon {
 
     .project-card {
         max-width: 250%;
+    }
+
+    .carousel-arrow {
+        display: none;
+    }
+
+    .project-page {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 2px;
     }
 }
 

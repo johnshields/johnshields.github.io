@@ -1,11 +1,12 @@
 import { projects } from './data/projects.js';
-import { badges, badgeLabels } from './data/badges.js';
+import { badges, badgeLabels, resolveBadges } from './data/badges.js';
 import { about } from './data/about.js';
 import { personSchema } from './data/schema.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     injectSchema();
     renderAbout();
+    await resolveBadges();
     renderProjects();
     initializeSmoothScrolling();
     initializeProjectCards();
@@ -28,13 +29,14 @@ function renderAbout() {
     mount.innerHTML = about.map(html => `<p>${html}</p>`).join('');
 }
 
+const MOBILE_QUERY = '(max-width: 600px)';
+const perPage = () => (window.matchMedia(MOBILE_QUERY).matches ? 2 : 4);
+
 function renderProjects() {
     const mount = document.getElementById('project-container');
     if (!mount) return;
 
-    const visible = projects.filter(p => !p.archived);
-
-    mount.innerHTML = visible.map(p => `
+    const cards = projects.map(p => `
         <article class="project-card">
             <a class="project-link" href="${p.url}" target="_blank" rel="noopener noreferrer">
                 <img class="project-image" src="${p.img}" alt="${p.alt ?? p.title}" width="400" height="220" loading="lazy" decoding="async">
@@ -47,7 +49,106 @@ function renderProjects() {
                 `).join('')}
             </div>
         </article>
-    `).join('');
+    `);
+
+    let currentSize = perPage();
+    buildCarousel(mount, cards);
+
+    window.addEventListener('resize', () => {
+        // Rebuild when crossing the mobile breakpoint (2 vs 4 per page)
+        if (perPage() !== currentSize) {
+            currentSize = perPage();
+            buildCarousel(mount, cards);
+            return;
+        }
+        // Otherwise keep the active page aligned
+        const viewport = mount.querySelector('.project-viewport');
+        if (!viewport) return;
+        const page = Number(viewport.dataset.page) || 0;
+        viewport.scrollLeft = page * viewport.clientWidth;
+    }, { passive: true });
+}
+
+function buildCarousel(mount, cards) {
+    const size = perPage();
+    const pages = [];
+    for (let i = 0; i < cards.length; i += size) {
+        pages.push(cards.slice(i, i + size).join(''));
+    }
+    const pageCount = pages.length;
+
+    const dots = pageCount > 1
+        ? `<div class="carousel-dots" role="tablist" aria-label="Project pages">
+                ${pages.map((_, i) => `
+                    <button class="carousel-dot${i === 0 ? ' is-active' : ''}" type="button"
+                        role="tab" aria-label="Go to page ${i + 1}" data-page="${i}"></button>
+                `).join('')}
+            </div>`
+        : '';
+
+    const arrows = pageCount > 1
+        ? `<button class="carousel-arrow prev" type="button" aria-label="Previous projects" disabled>&#8249;</button>
+           <button class="carousel-arrow next" type="button" aria-label="Next projects">&#8250;</button>`
+        : '';
+
+    mount.innerHTML = `
+        <div class="project-carousel">
+            ${arrows}
+            <div class="project-viewport" tabindex="0" aria-roledescription="carousel" aria-label="Projects" data-page="0">
+                <div class="project-track">
+                    ${pages.map(page => `<div class="project-page">${page}</div>`).join('')}
+                </div>
+            </div>
+            ${dots}
+        </div>
+    `;
+
+    if (pageCount > 1) initializeCarousel(mount, pageCount);
+}
+
+function initializeCarousel(mount, pageCount) {
+    const viewport = mount.querySelector('.project-viewport');
+    const prev = mount.querySelector('.carousel-arrow.prev');
+    const next = mount.querySelector('.carousel-arrow.next');
+    const dots = Array.from(mount.querySelectorAll('.carousel-dot'));
+    if (!viewport) return;
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let current = 0;
+
+    const goTo = (page) => {
+        current = Math.max(0, Math.min(pageCount - 1, page));
+        viewport.scrollTo({
+            left: current * viewport.clientWidth,
+            behavior: prefersReduced ? 'auto' : 'smooth',
+        });
+    };
+
+    const syncControls = () => {
+        const page = Math.round(viewport.scrollLeft / viewport.clientWidth);
+        current = page;
+        viewport.dataset.page = page;
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === page));
+        if (prev) prev.disabled = page <= 0;
+        if (next) next.disabled = page >= pageCount - 1;
+    };
+
+    if (prev) prev.addEventListener('click', () => goTo(current - 1));
+    if (next) next.addEventListener('click', () => goTo(current + 1));
+    dots.forEach(d => d.addEventListener('click', () => goTo(Number(d.dataset.page))));
+
+    viewport.addEventListener('scroll', syncControls, { passive: true });
+
+    viewport.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            goTo(current + 1);
+        }
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            goTo(current - 1);
+        }
+    });
 }
 
 function initializeSmoothScrolling() {
