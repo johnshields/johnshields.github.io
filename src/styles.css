@@ -719,7 +719,7 @@ h2 .header-icon {
     }
 
     .project-card {
-        max-width: 250%;
+        max-width: 100%;
     }
 
     .carousel-arrow {
@@ -727,7 +727,7 @@ h2 .header-icon {
     }
 
     .project-page {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 16px;
         padding: 2px;
     }
