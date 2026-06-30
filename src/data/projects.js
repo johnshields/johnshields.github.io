@@ -9,6 +9,15 @@ export const projects = [
         archived: false,
     },
     {
+        title: 'Modulr',
+        img: 'src/img/projects/modulr.png',
+        alt: 'Modulr',
+        url: 'https://github.com/johnshields/modulr',
+        desc: 'A native macOS companion for DJs that analyses, tags, and organises a music library for harmonic mixing. Built with SwiftUI and a Python toolkit (madmom and librosa for BPM and key detection, ffmpeg for mastering), featuring Camelot key matching, rekordbox-style RGB waveforms and spectrograms, and one-click loudness, conversion, and silence-trim cleanup.',
+        tech: ['swift', 'python', 'ffmpeg'],
+        archived: false,
+    },
+    {
         title: 'Slate Runner',
         img: 'src/img/projects/slaterunner.png',
         alt: 'SLateRunner',
@@ -42,7 +51,7 @@ export const projects = [
         url: 'https://github.com/johnshields/Repota-App',
         desc: 'A CRUD web app for automobile technicians to manage service reports, developed for my BSc dissertation. Built with a Go microservices backend and Angular frontend, deployed on AWS with secure authentication.',
         tech: ['go', 'angular', 'mysql', 'aws'],
-        archived: true,
+        archived: false,
     },
     {
         title: 'Dunkirk Spitfire Re-creation',

@@ -36,7 +36,7 @@ function renderProjects() {
     const mount = document.getElementById('project-container');
     if (!mount) return;
 
-    const cards = projects.map(p => `
+    const cards = projects.filter(p => !p.archived).map(p => `
         <article class="project-card">
             <a class="project-link" href="${p.url}" target="_blank" rel="noopener noreferrer">
                 <img class="project-image" src="${p.img}" alt="${p.alt ?? p.title}" width="400" height="220" loading="lazy" decoding="async">
