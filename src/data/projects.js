@@ -13,7 +13,7 @@ export const projects = [
         img: 'src/img/projects/modulr.png',
         alt: 'Modulr',
         url: 'https://github.com/johnshields/modulr',
-        desc: 'A native macOS companion for DJs that analyses, tags, and organises a music library for harmonic mixing. Built with SwiftUI and a Python toolkit (madmom and librosa for BPM and key detection, ffmpeg for mastering), featuring Camelot key matching, rekordbox-style RGB waveforms and spectrograms, and one-click loudness, conversion, and silence-trim cleanup.',
+        desc: 'A native macOS companion for DJs that analyses, tags, and organises a music library for harmonic mixing. Built with SwiftUI and a Python toolkit (madmom, librosa, ffmpeg) for BPM and key detection, Camelot matching, and one-click audio cleanup.',
         tech: ['swift', 'python', 'ffmpeg'],
         archived: false,
     },
