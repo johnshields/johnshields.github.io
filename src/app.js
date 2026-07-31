@@ -1,7 +1,7 @@
-import { projects } from './data/projects.js';
+import projects from './data/projects.json' with { type: 'json' };
 import { badges, badgeLabels, resolveBadges } from './data/badges.js';
-import { about } from './data/about.js';
-import { personSchema } from './data/schema.js';
+import about from './data/about.json' with { type: 'json' };
+import personSchema from './data/schema.json' with { type: 'json' };
 
 document.addEventListener('DOMContentLoaded', async () => {
     injectSchema();
