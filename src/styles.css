@@ -137,10 +137,27 @@ footer {
     margin: 0 auto;
     padding: 0 clamp(var(--space-4), 4vw, var(--space-12));
     display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
-    gap: var(--space-6);
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "photo text"
+        "photo buttons";
+    align-items: center;
+    column-gap: var(--space-8);
+    row-gap: var(--space-2);
+}
+
+.headshot-container {
+    grid-area: photo;
+}
+
+.hero-text {
+    grid-area: text;
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: var(--space-1);
+    text-align: left;
 }
 
 .hero-text p {
@@ -152,11 +169,37 @@ footer {
     font-weight: 800;
 }
 
+.hero-area .button-group {
+    grid-area: buttons;
+    align-self: start;
+    --badge-h: clamp(30px, 2.4vw, 42px);
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: var(--space-2);
+}
+
+@media (min-width: 1100px) {
+    .hero-area .button-group {
+        flex-wrap: nowrap;
+    }
+}
+
+.hero-area .custom-badge {
+    font-size: clamp(11px, 1vw, 14px);
+    min-width: 0;
+    padding: 0 12px;
+    gap: 8px;
+    letter-spacing: 2px;
+}
+
+.hero-area .custom-badge i {
+    font-size: clamp(13px, 1.1vw, 16px);
+}
+
 .headshot {
-    width: clamp(140px, 24vw, 240px);
+    width: clamp(160px, 22vw, 220px);
     aspect-ratio: 1;
-    border-radius: 50%;
-    border: 4px solid var(--bg);
+    border-radius: var(--radius-sm);
     box-shadow: var(--shadow);
     object-fit: cover;
     margin: 0 auto;
@@ -167,6 +210,7 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: var(--space-4);
+    flex: 0 0 auto;
 }
 
 .button-group {
@@ -606,11 +650,13 @@ h2 .header-icon {
     }
 
     .hero-area {
-        flex-direction: column;
+        grid-template-areas:
+            "photo text"
+            "buttons buttons";
         align-items: center;
-        text-align: center;
+        column-gap: var(--space-4);
+        row-gap: var(--space-4);
         padding: 0 20px;
-        display: flex;
     }
 
     .hero-text h1 {
@@ -622,15 +668,14 @@ h2 .header-icon {
     }
 
     .headshot {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
+        width: 160px;
+        height: 160px;
         object-fit: cover;
-        margin: 0 auto;
+        margin: 0;
     }
 
-    .button-group {
-        justify-content: center;
+    .hero-area .button-group {
+        justify-content: flex-start;
         flex-wrap: wrap;
         gap: 10px;
         max-width: 325px;
@@ -684,6 +729,23 @@ h2 .header-icon {
 
 /* Mobile phones */
 @media (max-width: 600px) {
+    .hero-area {
+        gap: var(--space-3);
+    }
+
+    .headshot {
+        width: 90px;
+        height: 90px;
+    }
+
+    .hero-text h1 {
+        font-size: 26px;
+    }
+
+    .hero-text p {
+        font-size: 13px;
+    }
+
     .button-group a img {
         height: 28px;
     }
